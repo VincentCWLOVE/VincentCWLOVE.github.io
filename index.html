@@ -68,6 +68,113 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-WebRTC" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/15/WebRTC/" class="article-date">
+  <time datetime="2016-10-15T01:04:04.000Z" itemprop="datePublished">2016-10-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/15/WebRTC/">WebRTC</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p style="text-align:right;font-weight:bold;font-size:20px;width=100%">陈文</p>
+
+
+<p></p><p style="text-align:right;font-weight:bold;font-size:14px;width=100%">博看文思(广州)</p>    <p></p>
+<p><blockquote></blockquote></p>
+<p></p><p style="font:italic 300 14px arial,sans-serif;border=1px solid black;"><br>&nbsp;&nbsp;&nbsp;&nbsp; WebRTC实现了基于网页的视频会议，标准是WHATWG 协议，目的是通过浏览器提供简单的javascript就可以达到实时通讯（Real-Time Communications (RTC)）能力。<br><br>&nbsp;&nbsp;&nbsp;&nbsp; WebRTC（Web Real-Time Communication）项目的最终目的主要是让Web开发者能够基于浏览器（Chrome\FireFox...）轻易快捷开发出丰富的实时多媒体应用，而无需下载安装任何插件，Web开发者也无需关注多媒体的数字信号处理过程，只需编写简单的Javascript程序即可实现，W3C等组织正在制定Javascript 标准API，目前是WebRTC 1.0版本，Draft状态；另外WebRTC还希望能够建立一个多互联网浏览器间健壮的实时通信的平台，形成开发者与浏览器厂商良好的生态环境。同时，Google也希望和致力于让WebRTC的技术成为HTML5标准之一，可见Google布局之深远。<br>WebRTC提供了视频会议的核心技术，包括音视频的采集、编解码、网络传输、显示等功能，并且还支持跨平台：windows，linux，mac，android。<br></p><br><p></p>
+<h3>浏览器支持情况</h3>
+
+<ul>
+<li>桌上PC端<ul>
+<li>Google Chrome 23</li>
+<li>Mozilla Firefox 22</li>
+<li>Opera 18</li>
+</ul>
+</li>
+<li>Android端<ul>
+<li>Google Chrome 28（从版本29开始默认开启）</li>
+<li>Mozilla Firefox 24[10]</li>
+<li>Opera Mobile 12</li>
+</ul>
+</li>
+<li>Google Chrome OS</li>
+<li>Firefox OS</li>
+<li>iOS</li>
+<li>Blackberry 10 内置浏览器</li>
+</ul>
+<h3>开发环境搭建</h3>
+
+<ol>
+<li><a href="https://nodejs.org/" target="_blank" rel="external">访问Node.js网站</a>，在操作系统中安装Node.js</li>
+<li>打开终端或命令行界面并输入<span style="background-color:black;color:white">npm install -g node-static</span>（你很可能需要管理员权限）</li>
+</ol>
+<p></p><h3>开始第一个项目</h3><p></p>
+<ol>
+<li>在你想要的地方创建一个文件夹，作为你的工程目录</li>
+<li>在文件夹下创建一个 server.js 文件，代码如下： <pre style="background-color:#e9e9e9">
+ var static = require('node-static');
+ var http = require('http');
+ var file = new(static.Server)();
+ var app = http.createServer(function (req, res) {
+      file.serve(req, res);
+ }).listen(8080);
+ </pre></li>
+<li><p>在文件夹下创建一个 index.html 文件，js代码如下：</p>
+ <pre style="background-color:#e9e9e9">
+    function hasUserMedia() {
+       return !!(navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
+     }
+ if (hasUserMedia()) {
+   navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;   
+   navigator.getUserMedia({
+     video: true,
+     audio: true
+   }, function (stream) {
+     var video = document.querySelector('video');
+     video.src = window.URL.createObjectURL(stream);
+   }, function (err) {
+       console.log(err);
+   });
+ } else {
+   alert("抱歉，你的浏览器不支持 getUserMedia.");
+ }
+
+ </pre>
+</li>
+<li><p>打开终端或命令行界面, cd + 您创建的文件夹路径</p>
+</li>
+<li>继续输入 <span style="background-color:black;color:white">node server.js </span></li>
+<li>出现错误之后，输入<span style="background-color:black;color:white"> npm install node-static  </span></li>
+<li>在浏览器输入 <span style="background-color:black;color:white"> localhost:8080  </span></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/15/WebRTC/" data-id="ciua1lqo90001364y9gcbr1yz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-团队编码规范" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/10/14/团队编码规范/" class="article-date">
@@ -706,7 +813,7 @@ var zhangsan = &quot;zhangsan&quot;;    // 双斜线距离分号四个空格，�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/14/团队编码规范/" data-id="ciu9e0dyy0005e94yqjtqiill" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/14/团队编码规范/" data-id="ciua1lqof0003364yha9w65x6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/团队编码规范/">团队编码规范</a></li></ul>
@@ -968,7 +1075,7 @@ var zhangsan = &quot;zhangsan&quot;;    // 双斜线距离分号四个空格，�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/14/WebTool/" data-id="ciu9e0dyc0000e94y3e6ht3fn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/10/14/WebTool/" data-id="ciua1lqod0002364yt43kcphd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前段开发工具库/">前段开发工具库</a></li></ul>
@@ -1022,6 +1129,10 @@ var zhangsan = &quot;zhangsan&quot;;    // 双斜线距离分号四个空格，�
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/10/15/WebRTC/">WebRTC</a>
+          </li>
         
           <li>
             <a href="/2016/10/14/团队编码规范/">团队编码规范</a>
