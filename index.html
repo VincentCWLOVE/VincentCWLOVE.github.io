@@ -1,1186 +1,252 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<!-- Head tag -->
 <head>
-  <meta charset="utf-8">
-  
-  <title>Vincent</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="a blog for iOS and html5">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Vincent">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Vincent">
-<meta property="og:description" content="a blog for iOS and html5">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vincent">
-<meta name="twitter:description" content="a blog for iOS and html5">
-  
-    <link rel="alternate" href="/atom.xml" title="Vincent" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="a blog for iOS and html5">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Vincent CHEN">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Vincent"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="a blog for iOS and html5" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Vincent"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="website" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Vincent</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
 
 </head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Vincent</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">a developer for iOS and html5</a>
-        </h2>
-      
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Vincent</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/VincentCWLOVE">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-WebRTC" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/15/WebRTC/" class="article-date">
-  <time datetime="2016-10-15T01:04:04.000Z" itemprop="datePublished">2016-10-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/15/WebRTC/">WebRTC</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p style="text-align:right;font-weight:bold;font-size:20px;width=100%">陈文</p>
-
-
-<p></p><p style="text-align:right;font-weight:bold;font-size:14px;width=100%">博看文思(广州)</p>    <p></p>
-<p><blockquote></blockquote></p>
-<p></p><p style="font:italic 300 14px arial,sans-serif;border=1px solid black;"><br>&nbsp;&nbsp;&nbsp;&nbsp; WebRTC实现了基于网页的视频会议，标准是WHATWG 协议，目的是通过浏览器提供简单的javascript就可以达到实时通讯（Real-Time Communications (RTC)）能力。<br><br>&nbsp;&nbsp;&nbsp;&nbsp; WebRTC（Web Real-Time Communication）项目的最终目的主要是让Web开发者能够基于浏览器（Chrome\FireFox...）轻易快捷开发出丰富的实时多媒体应用，而无需下载安装任何插件，Web开发者也无需关注多媒体的数字信号处理过程，只需编写简单的Javascript程序即可实现，W3C等组织正在制定Javascript 标准API，目前是WebRTC 1.0版本，Draft状态；另外WebRTC还希望能够建立一个多互联网浏览器间健壮的实时通信的平台，形成开发者与浏览器厂商良好的生态环境。同时，Google也希望和致力于让WebRTC的技术成为HTML5标准之一，可见Google布局之深远。<br>WebRTC提供了视频会议的核心技术，包括音视频的采集、编解码、网络传输、显示等功能，并且还支持跨平台：windows，linux，mac，android。<br></p><br><p></p>
-<h3>浏览器支持情况</h3>
-
-<ul>
-<li>桌上PC端<ul>
-<li>Google Chrome 23</li>
-<li>Mozilla Firefox 22</li>
-<li>Opera 18</li>
-</ul>
-</li>
-<li>Android端<ul>
-<li>Google Chrome 28（从版本29开始默认开启）</li>
-<li>Mozilla Firefox 24[10]</li>
-<li>Opera Mobile 12</li>
-</ul>
-</li>
-<li>Google Chrome OS</li>
-<li>Firefox OS</li>
-<li>iOS</li>
-<li>Blackberry 10 内置浏览器</li>
-</ul>
-<h3>开发环境搭建</h3>
-
-<ol>
-<li><a href="https://nodejs.org/" target="_blank" rel="external">访问Node.js网站</a>，在操作系统中安装Node.js</li>
-<li>打开终端或命令行界面并输入<span style="background-color:black;color:white">npm install -g node-static</span>（你很可能需要管理员权限）</li>
-</ol>
-<p></p><h3>开始第一个项目</h3><p></p>
-<ol>
-<li>在你想要的地方创建一个文件夹，作为你的工程目录</li>
-<li>在文件夹下创建一个 server.js 文件，代码如下： <pre style="background-color:#e9e9e9;color:turquoise">
- var static = require('node-static');
- var http = require('http');
- var file = new(static.Server)();
- var app = http.createServer(function (req, res) {
-      file.serve(req, res);
- }).listen(8080);
- </pre></li>
-<li><p>在文件夹下创建一个 index.html 文件，js代码如下：</p>
- <pre style="background-color:#e9e9e9;color:turquoise">
-    function hasUserMedia() {
-       return !!(navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
-     }
- if (hasUserMedia()) {
-   navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;   
-   navigator.getUserMedia({
-     video: true,
-     audio: true
-   }, function (stream) {
-     var video = document.querySelector('video');
-     video.src = window.URL.createObjectURL(stream);
-   }, function (err) {
-       console.log(err);
-   });
- } else {
-   alert("抱歉，你的浏览器不支持 getUserMedia.");
- }
-
- </pre>
-</li>
-<li><p>打开终端或命令行界面, cd + 您创建的文件夹路径</p>
-</li>
-<li>继续输入 <span style="background-color:black;color:white">node server.js </span></li>
-<li>出现错误之后，输入<span style="background-color:black;color:white"> npm install node-static  </span></li>
-<li>在浏览器输入 <span style="background-color:black;color:white"> localhost:8080  </span></li>
-</ol>
-<p></p><h3>项目地址</h3><br>    <a href="https://github.com/VincentCWLOVE/WebRTC" target="_blank" rel="external">项目地址</a><p></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/15/WebRTC/" data-id="ciua1t5ku00003x4yrrgohj5q" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebRTC/">WebRTC</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-团队编码规范" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/14/团队编码规范/" class="article-date">
-  <time datetime="2016-10-14T14:20:23.000Z" itemprop="datePublished">2016-10-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/14/团队编码规范/">团队编码规范</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>##文档目录</p>
-<ul>
-<li><a href="#">命名规范</a><ul>
-<li><a href="#">CSS 类名</a></li>
-<li><a href="#">JavaScript 变量命名</a></li>
-<li><a href="#">HTML,TPL 文件命名</a></li>
-<li><a href="#">CSS,LESS 文件命名</a></li>
-<li><a href="#">JavaScript,JSON 文件命名</a></li>
-</ul>
-</li>
-<li><a href="#">HTML</a><ul>
-<li><a href="#">基础设施</a></li>
-<li><a href="#">书写格式</a></li>
-<li><a href="#">语义优化</a></li>
-<li><a href="#">注释方法</a></li>
-</ul>
-</li>
-<li><a href="#">CSS</a><ul>
-<li><a href="#">基础设施</a></li>
-<li><a href="#">书写格式</a></li>
-<li><a href="#">代码组织</a></li>
-</ul>
-</li>
-<li><a href="#">JavaScript</a><ul>
-<li><a href="#">缩进,分号,换行,空格</a></li>
-<li><a href="#">空行</a></li>
-<li><a href="#">括号对齐</a></li>
-<li><a href="#">变量声明</a></li>
-<li><a href="#">函数声明</a></li>
-<li><a href="#">undefined使用</a></li>
-<li><a href="#">Object对象</a></li>
-<li><a href="#">Array数组</a></li>
-<li><a href="#">switch</a></li>
-<li><a href="#">for</a></li>
-<li><a href="#">杂项</a></li>
-</ul>
-</li>
-<li><a href="#">注释规范</a><ul>
-<li><a href="#">HTML 注释</a></li>
-<li><a href="#">CSS 注释</a></li>
-<li><a href="#">JavaScript 注释</a></li>
-<li><a href="#">JsDoc 注释</a></li>
-</ul>
-</li>
-</ul>
-<p>##命名规范</p>
-<p>####CSS 类名</p>
-<ul>
-<li>保持 Class 命名为全小写，可以使用短划线（不要使用下划线和 camelCase驼峰式命名）</li>
-<li>短划线应该作为相关类的自然间断。(例如，<code>.btn</code> 和 <code>.btn-danger</code>)。</li>
-<li>避免过度使用简写。.btn 可以很好地描述 button，但是 .s 不能代表任何元素。</li>
-<li>Class 的命名应该尽量短，也要尽量明确。</li>
-<li>使用有意义的名称；使用结构化或者作用目标相关，而不是抽象的名称。</li>
-<li>命名时使用最近的父节点或者父 class 作为前缀</li>
-<li><p>使用 .js-* classes 来表示行为(相对于样式)，但是不要在 CSS 中包含这些 classes。</p>
-<pre><code>/* Bad example */
-.t { ... }
-.red { ... }
-.header { ... }
-
-/* Good example */
-.tweet { ... }
-.important { ... }
-.tweet-header { ... }
-</code></pre></li>
-</ul>
-<p>####JavaScript 变量命名</p>
-<ul>
-<li>标准变量采用驼峰标识</li>
-<li>使用的ID的地方一定全大写</li>
-<li>使用的URL的地方一定全大写, 比如说 reportURL</li>
-<li>涉及Android的，一律大写第一个字母</li>
-<li>涉及iOS的，一律小写第一个，大写后两个字母</li>
-<li>常量采用大写字母，下划线连接的方式</li>
-<li><p>构造函数，大写第一个字母</p>
-<pre><code>var thisIsMyName;
-
-var goodID;
-
-var AndroidVersion;
-
-var iOSVersion;
-
-var MAX_COUNT = 10;
-
-function Person(name) {
-    this.name = name
-}
-</code></pre></li>
-</ul>
-<p>####HTML，TPL文件命名</p>
-<ul>
-<li>多个单词组成时，采用中划线连接方式，比如说：error-report.html</li>
-</ul>
-<p>####CSS，LESS文件命名</p>
-<ul>
-<li>多个单词组成时，采用中划线连接方式，比如说: retina-sprites.scss</li>
-</ul>
-<p>####JavaScript，JSON文件命名</p>
-<ul>
-<li>多个单词组成时，采用中划线连接方式，比如说：账号模型文件 account-model.js</li>
-</ul>
-<p>##HTML</p>
-<p>####基础设施</p>
-<ul>
-<li><p>文档声明，文件应以“&lt;!DOCTYPE ……&gt;”首行顶格开始，推荐使用html5文档类型</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-    &lt;head&gt;
-    &lt;/head&gt;
-&lt;/html&gt;
-</code></pre></li>
-<li><p>语言种类，默认声明文档使用中文</p>
-<pre><code>&lt;html lang=&quot;zh-cn&quot;&gt;
-    &lt;!-- ... --&gt;
-&lt;/html&gt;
-</code></pre></li>
-<li><p>页面编码，必须申明文档的charset编码，且与文件本身编码保持一致，推荐使用utf-8编码</p>
-<pre><code>&lt;head&gt;
-    &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html;charset=utf-8&quot;/&gt;
-&lt;/head&gt;
-</code></pre></li>
-</ul>
-<ul>
-<li><p>IE兼容模式，默认使用最高浏览器的渲染模式，考虑向后兼容</p>
-<pre><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=Edge&quot;&gt;
-</code></pre></li>
-<li><p>样式和脚本，引入 CSS 和 JavaScript 时不需要指明 type</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;zh-cn&quot;&gt;
-    &lt;head&gt;
-        &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html;charset=utf-8&quot;&gt;
-        &lt;title&gt;HTML规范&lt;/title&gt;
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;/&gt;
-        &lt;style&gt;&lt;/style&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
-</code></pre></li>
-</ul>
-<p>####书写格式</p>
-<ul>
-<li>代码保持简洁的树形结构，必须使用四个空格的TAB键来进行代码缩进</li>
-<li>HTML标签名、属性和值全部小写，属性不能为空且必须加双引号</li>
-<li>不要使用<code>&amp;nbsp</code>进行缩进</li>
-<li>不要使用行内样式</li>
-<li>不要在内联元素中嵌入块级元素</li>
-<li>不要在自动闭合标签结尾处使用斜线<ul>
-<li><code>&lt;img src=&quot;photo.png&quot; alt=&quot;头像&quot;&gt;</code></li>
-</ul>
-</li>
-<li>不要在<code>Boolean</code>属性值中声明取值的属性<ul>
-<li><code>&lt;input type=&quot;text&quot; disabled&gt;</code></li>
-</ul>
-</li>
-<li><p>HTML 属性应该按照特定的顺序出现以保证易读性</p>
-<ul>
-<li><code>id</code></li>
-<li><code>class</code></li>
-<li><code>name</code></li>
-<li><code>data-*</code></li>
-<li><code>src</code>,<code>for</code>,<code>type</code>,<code>href</code></li>
-<li><p><code>title</code>, <code>alt</code></p>
-<pre><code>&lt;a id=&quot;code_guide&quot; class=&quot;code-guide&quot; data-modal=&quot;toggle&quot; href=&quot;#&quot;&gt;Link&lt;/a&gt;
-&lt;input name=&quot;sex&quot; class=&quot;form-control&quot; type=&quot;text&quot;&gt;
-&lt;img src=&quot;photo.jpg&quot; alt=&quot;头像&quot;&gt;
-</code></pre></li>
-</ul>
-</li>
-</ul>
-<p>####语义优化</p>
-<ul>
-<li>根据网页中某种类型的内容，使用特定HTML语义化的标签编写页面结构</li>
-<li>对a元素提供title属性，img提供alt属性，加强”资源型”内容的可访问性</li>
-<li>当空标签使用背景图时，必须加上相对应的文字说明，并按需隐藏文字，加强”不可见”内容的可访问性</li>
-<li>使用div代替table进行布局，但是表现具有明显表格的数据，table还是首选</li>
-<li>实用高于完美，尽量的遵循 HTML 标准和语义，但是不应该以浪费实用性作为代价</li>
-</ul>
-<p>##CSS</p>
-<p>####基础设施</p>
-<ul>
-<li><p>CSS文件顶格位置申明文档的编码charset，推荐使用UTF-8编码</p>
-<pre><code>@charset &quot;utf-8&quot;;
-</code></pre></li>
-<li><p>样式表中的中文字体使用unicode转码</p>
-<pre><code>font-family: Tahoma, &quot;\5fae\8f6f\96c5\9ed1&quot;, &quot;\5B8B\4F53&quot;;
-</code></pre></li>
-<li><p>使用clearfix或overflow清除子元素的浮动，而不是空标签</p>
-<pre><code>.clearfix:after{
-    visibility:hidden;
-    display:block;
-    font-size:0;
-    content:&quot; &quot;;
-    clear:both;
-    height:0;
-}
-.clearfix{
-    zoom:1;
-}
-</code></pre></li>
-<li><p>针对某个浏览器写的样式或某个浏览器BUG的样式，必须加上注释说明</p>
-<pre><code>.clearfix{
-    zoom:1; /* for IE6 IE7 */
-}
-</code></pre></li>
-<li><p>不使用影响页面性能expression表达式与filter，实现必要的特殊效果时，允许使用</p>
-<pre><code>/* expression */
-.class{width:expression(this.width&gt;100?&apos;100px&apos;:&apos;auto&apos;);}
-
-/* filter */
-.class{filter:alpha(opacity=50);}
-</code></pre></li>
-</ul>
-<p>####书写格式</p>
-<ul>
-<li>使用四个空格的TAB键来进行代码缩，保证代码在各种环境下显示一致</li>
-<li>为了代码的易读性，在每个声明的左括号前增加一个空格。</li>
-<li>声明块的右括号应该另起一行</li>
-<li>选择器、属性和值都使用小写，并且为选择器中的属性取值添加引号<code>input[type=&quot;text&quot;]</code></li>
-<li>使用组合选择器时，保持每个独立的选择器占用一行</li>
-<li>使用逗号分隔的取值，都应该在逗号之后增加一个空格。比如说<code>box-shadow</code></li>
-<li><p>最后一个属性值也以分号结尾，避免后期对维护带来的麻烦</p>
-<pre><code>.selector,
-.selector-secondary,
-.selector[type=&quot;text&quot;] {
-    padding: 15px;
-    margin-bottom: 15px;
-    box-shadow: 0 1px 2px #ccc, inset 0 1px 0 #fff;
-}
-</code></pre></li>
-<li><p>所有的十六进制值都应该使用小写字母，并且使用缩写方式 <code>color:#fff;</code></p>
-</li>
-<li>当值为0时省略单位 <code>margin:0;</code></li>
-<li><p><code>z-index</code>一般以5为一个步长（如50,55,60），方便以后增加或修改</p>
-<pre><code>.ui-box1 {
-    z-index: 50;
-}
-.ui-box2 {
-    z-index: 55;
-}
-</code></pre></li>
-<li><p>省略url引用中的引号，其他需要引号的地方使用双引号</p>
-<pre><code>.ui-box {
-    background:url(bg.png);
-}
-.ui-box:after {
-    content:&quot;.&quot;;
-}
-</code></pre></li>
-<li><p>先写带有浏览器私有标志的，并且通过缩进使取值垂直对齐以便多行编辑。</p>
-<pre><code>.ui-box {
-    -webkit-box-shadow:0 0 0 #000;
-       -moz-box-shadow:0 0 0 #000;
-            box-shadow:0 0 0 #000;
-}
-</code></pre></li>
-<li><p>不建议使用<code>!important</code>，不建议使用<code>@import</code>，</p>
-</li>
-<li>原则上不允许使用Hack，不兼容问题可以通过改变方法和思路来解决，对于浏览器自身的缺陷，可以允许使用适当的Hack</li>
-<li><p>当使用属性简写时你必须设置所有取值，常见的属性滥用包括</p>
-<ul>
-<li><p><code>padding</code>,<code>margin</code>,<code>font</code>,<code>background</code>,<code>border</code>,<code>border-radius</code></p>
-<pre><code>/* Bad example */
-.element {
-    margin: 0 0 10px;
-    background: red;
-    background: url(&quot;image.jpg&quot;);
-    border-radius: 3px 3px 0 0;
-}
-
-/* Good example */
-.element {
-    margin-bottom: 10px;
-    background-color: red;
-    background-image: url(&quot;image.jpg&quot;);
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-}
-</code></pre></li>
-</ul>
-</li>
-<li><p>根据属性的重要性按顺序书写</p>
-<ul>
-<li><p>Positioning 位置 &gt; Box model 盒模型 &gt; Typographic 排版 &gt; Visual 外观 &gt; Misc 混杂</p>
-<pre><code>.declaration-order {
-    /* Positioning 位置*/
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 100;
-
-    /* Box-model 盒模型*/
-    display: block;
-    float: right;
-    width: 100px;
-    height: 100px;
-
-    /* Typography 排版*/
-    font: normal 13px &quot;Helvetica Neue&quot;, sans-serif;
-    line-height: 1.5;
-    color: #333;
-    text-align: center;
-
-    /* Visual 外观*/
-    background-color: #f5f5f5;
-    border: 1px solid #e5e5e5;
-    border-radius: 3px;
-
-    /* Misc 混杂*/
-    opacity: 1;
-}
-</code></pre></li>
-</ul>
-</li>
-</ul>
-<p>####代码组织</p>
-<ul>
-<li><p>以模块为单位组织代码，使用继承以及提取公共样式，提高代码复用率</p>
-<pre><code>&lt;!-- ui-box:模块基类，用于定义模块的公共结构样式 --&gt;
-&lt;div class=&quot;ui-box&quot;&gt;
-
-    &lt;!-- ui-box-head:模块头部 --&gt;
-    &lt;div class=&quot;ui-box-head&quot;&gt;
-        &lt;h3 class=&quot;ui-box-head-title&quot;&gt;标题&lt;/h3&gt;
-    &lt;/div&gt;
-
-    &lt;!-- ui-box-container:模块内容 --&gt;
-    &lt;div class=&quot;ui-box-container&quot;&gt;
-        &lt;div class=&quot;ui-box-content&quot;&gt;内容&lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-</code></pre></li>
-</ul>
-<p>##JavaScript</p>
-<p>####缩进,分号,换行,空格</p>
-<ul>
-<li>4个空格保持代码缩进</li>
-<li>在语句末尾使用分号结束，清楚语句的起止位置</li>
-<li>多于120个字符应换行，优先在左花括号后、操作符后进行换行；</li>
-<li><p>if else前后留有空格</p>
-<pre><code>if (typeof state === &quot;undefined&quot; ||
-    typeof state.cdnrejected === &quot;undefined&quot; ||
-    state.cdnrejected !== true) {
-    url = &quot;http://pub.state.com/qqfind/js/location4.js&quot;;
-} else {
-    url = &quot;http://find.state.com/js/location4.js&quot;;
-}
-</code></pre></li>
-</ul>
-<p>####空行</p>
-<ul>
-<li>方法之间加</li>
-<li>单行或多行注释前加</li>
-<li>逻辑块之间加空行增加可读性</li>
-</ul>
-<p>####括号对齐</p>
-<ul>
-<li>括号前后有空格， 花括号起始 不另换行，结尾新起一行</li>
-<li>花括号必须要， 即使内容只有一行， 决不允许右边第二种情况</li>
-<li><p>涉及 if for while do…while try…catch…finally 的地方都必须使用花括号</p>
-<pre><code>// Good
-if (condition) {
-    doSomething();
-}
-
-// Bad
-if (condition)
-    doSomething();
-    doSomethingElse();
-</code></pre></li>
-</ul>
-<p>####变量声明</p>
-<ul>
-<li>所有函数内的变量声明应该放在函数内头部，只使用一个 var(多了JSLint报错)， 一个变量一行， 在行末跟注释</li>
-<li><p>优先使用单引号（’）而不是双引号（”）表示字符常量</p>
-<pre><code>function doSomethingWithItems(items) {
-
-    var value = 10,    // 注释
-        result = value + 10,    // 注释
-        name = &apos;rose&apos;,     // 注释
-        i,    // 注释
-        len;    // 注释
-
-    for (i=0, len=items.length; i &lt; len; i++) {
-        doSomething(items[i]);
-    }
-}
-</code></pre></li>
-</ul>
-<p>####函数声明</p>
-<ul>
-<li>函数声明 和 函数表达式 的不同，函数表达式 的（）前后必须有空格，而函数生命 在有函数名的时候不需要空格， 没有函数名的时候需要空格。</li>
-<li>函数调用括号前后不需要空格</li>
-<li>立即执行函数的写法, 最外层必须包一层括号</li>
-<li><p>“use strict” 决不允许全局使用， 必须放在函数的第一行， 可以用自执行函数包含大的代码段, 如果 “use strict” 在函数外使用， JSLint 和 JSHint 均会报错</p>
-<pre><code>function doSomething(item) {
-    // do something
-}
-
-var doSomething = function (item) {
-    // do something
-}
-</code></pre></li>
-</ul>
-<pre><code>// Good
-doSomething(item);
-
-// Bad: Looks like a block statement
-doSomething (item);
-
-
-// Good
-var value = (function() {
-
-    // function body
-    return {
-        message: &quot;Hi&quot;
-    }
-}());
-
-
-// Good
-(function() {
-    &quot;use strict&quot;;
-
-    function doSomething() {
-        // code
-    }
-
-    function doSomethingElse() {
-        // code
-    }
-
-})();
-</code></pre><p>####undefined使用</p>
-<ul>
-<li>永远不要直接使用undefined进行变量判断</li>
-<li><p>使用字符串 “undefined” 对变量进行判断</p>
-<pre><code>// Bad
-var person;
-console.log(person === undefined);    //true
-
-// Good
-console.log(typeof person);    // &quot;undefined&quot;
-</code></pre></li>
-</ul>
-<p>####Object对象</p>
-<pre><code>// Bad
-var team = new Team();
-team.title = &quot;AlloyTeam&quot;;
-team.count = 25;
-
-// Good  semi colon 采用 Followed by space 的形式
-var team = {
-    title: &quot;AlloyTeam&quot;,
-    count: 25
-};
-</code></pre><p>####Array数组</p>
-<pre><code>// Bad
-var colors = new Array(&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;);
-var numbers = new Array(1, 2, 3, 4);
-
-
-// Good
-var colors = [ &quot;red&quot;, &quot;green&quot;, &quot;blue&quot; ];
-var numbers = [ 1, 2, 3, 4 ];
-</code></pre><p>####switch</p>
-<ul>
-<li>花括号必须要， 即使内容只有一行;</li>
-<li>switch和括号之间有空格， case需要缩进; </li>
-<li><p>break之后跟下一个case中间留一个blank line;</p>
-<pre><code>switch (condition) {
-    case &quot;first&quot;:
-        // code
-        break;
-
-    case &quot;third&quot;:
-        // code
-        break;
-
-    default:
-    // code
-}
-</code></pre></li>
-</ul>
-<p>####for</p>
-<ul>
-<li>普通for循环, 分号后留有一个空格， 判断条件等内的操作符两边不留空格</li>
-<li>前置条件如果有多个，逗号后留一个空格</li>
-<li><p>for-in 一定要有 hasOwnProperty 的判断， 否则 JSLint 或者 JSHint 都会有一个 warn</p>
-<pre><code>var values = [ 1, 2, 3, 4, 5, 6, 7 ],
-    i, len;
-
-for (i=0, len=values.length; i&lt;len; i++) {
-    process(values[i]);
-}
-</code></pre></li>
-</ul>
-<pre><code>var prop;
-for (prop in object) {
-
-    // 注意这里一定要有 hasOwnProperty 的判断， 否则 JSLint 或者 JSHint 都会有一个 warn ！
-    if (object.hasOwnProperty(prop)) {
-        console.log(&quot;Property name is &quot; + prop);
-        console.log(&quot;Property value is &quot; + object[prop]);
-    }
-}
-</code></pre><p>####其他</p>
-<ul>
-<li>避免使用<code>a==b</code>, <code>a!=b</code>， 推荐用严格比较条件 <code>a===b</code>, <code>a!==b</code></li>
-<li>非特殊业务， 禁用<code>eval</code>,<code>with</code></li>
-</ul>
-<p>##注释规范</p>
-<p>####HTML 注释</p>
-<ul>
-<li><p>代码说明的注释方法，采用标签闭合的写法，与HTML标签保持格式统一</p>
-<pre><code>&lt;!-- 头部 --&gt;
-&lt;div class=&quot;header&quot;&gt;
-    &lt;!-- 导航 --&gt;
-    &lt;ul class=&quot;nav&quot;&gt;
-        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;nav1&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;nav2&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;!-- /导航 --&gt;
-&lt;/div&gt;
-&lt;!-- /头部 --&gt;
-</code></pre></li>
-<li><p>代码本身的注释方法，单行代码的注释也保持在同行，两端空格；多行代码的注释起始和结尾都另起一行并左缩进对齐</p>
-<pre><code>&lt;!-- &lt;h1 class=&quot;header&quot;&gt;&lt;a href=&quot;#&quot;&gt;LOGO&lt;/a&gt;&lt;/h1&gt; --&gt;
-&lt;!--
-&lt;ul class=&quot;nav&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;nav1&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;nav2&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
---&gt;
-</code></pre></li>
-<li><p>注释在IE6中的BUG</p>
-<ul>
-<li>如果两个浮动元素之间存在注释，那么可能导致布局错位或文字的BUG</li>
-<li>通常这种情况，把注释去掉是最好的解决方案</li>
-</ul>
-</li>
-</ul>
-<p>####CSS 注释</p>
-<ul>
-<li><p>单行注释，写在被注释对象的上一行，对属性及值的注释写于分号后</p>
-<pre><code>/* 单行注释文字 */
-.ui-box {
-    border: 1px solid #ccc;
-}
-.ui-box-head{
-    height:20px;
-    line-height:20px;/* 这里是对line-height的一个注释 */
-    overflow:hidden;
-}
-</code></pre></li>
-<li><p>块状注释，用于布局结构或模块，注释保持统一的缩进对齐，前面留空一行</p>
-<pre><code>/* 
- * 块状注释文字
- * 块状注释文字
- */
-.ui-box {}
-.ui-box-head {}
-.ui-box-head .ui-box-head-title{}
-.ui-box-container{}
-</code></pre></li>
-</ul>
-<p>####JavaScript 注释</p>
-<ul>
-<li><p>单行注释</p>
-<ul>
-<li>双斜线后，必须跟注释内容保留一个空格；</li>
-<li>可独占一行, 前边不许有空行, 缩进与下一行代码保持一致；</li>
-<li><p>位于一个代码行的末尾，双斜线距离分号四个空格，双斜线后始终保留一个空格</p>
-<pre><code>// Good
-if (condition) {
-
-    // if you made it here, then all security checks passed
-    allowed();
-}
-
-var zhangsan = &quot;zhangsan&quot;;    // 双斜线距离分号四个空格，双斜线后始终保留一个空格
-</code></pre></li>
-</ul>
-</li>
-<li><p>块状注释</p>
-<ul>
-<li>注释代码最少三行，保持统一的缩进，前面留空一行</li>
-<li><p>用于难于理解或者存在错误的代码段，也适用于HACK代码和逻辑较强的代码注释</p>
-<pre><code>/*
- * 注释内容与星标前保留一个空格
- */
-</code></pre></li>
-</ul>
-</li>
-</ul>
-<p>####JsDoc 注释</p>
-<ul>
-<li>JsDoc 是一个根据注释规范自动生成文档的工具</li>
-<li><p>详细的文档规范可参考 <a href="http://usejsdoc.org/" target="_blank" rel="external">usejsdoc.org</a></p>
-<pre><code>/**
- * here boy, look here , here is girl
- * @method lookGril
- * @param {Object} balabalabala
- * @return {Object} balabalabala
- */
-</code></pre></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/14/团队编码规范/" data-id="ciua1t5l200033x4yavuk60d8" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/团队编码规范/">团队编码规范</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-WebTool" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/10/14/WebTool/" class="article-date">
-  <time datetime="2016-10-14T12:50:18.000Z" itemprop="datePublished">2016-10-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/14/WebTool/">前端开发工具库</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>前端开发<ul>
-<li>开发环境<ul>
-<li><a href="http://www.nodejs.org/" target="_blank" rel="external">NodeJS</a> </li>
-<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="external">JDK</a> + <a href="http://tomcat.apache.org/" target="_blank" rel="external">Tomcat</a> (JAVA)</li>
-<li><a href="http://www.wampserver.com/en/" target="_blank" rel="external">Wamp</a> (PHP)</li>
-</ul>
-</li>
-<li>原型工具<ul>
-<li><a href="http://office.microsoft.com/zh-cn/visio" target="_blank" rel="external">Visio 2013</a> 流程图</li>
-<li>Axure 7 交互</li>
-<li><a href="http://uid.cdc.tencent.com/" target="_blank" rel="external">UID for Mobile</a></li>
-</ul>
-</li>
-<li>开发工具<ul>
-<li><a href="http://www.sublimetext.com/3" target="_blank" rel="external">Sublime Text 3</a></li>
-<li><a href="http://www.eclipse.org/" target="_blank" rel="external">Eclipse 3.5</a></li>
-</ul>
-</li>
-<li>切图工具<ul>
-<li>Photoshop 3+</li>
-<li><a href="http://xscopeapp.com/" target="_blank" rel="external">xScope</a> 尺子</li>
-<li><a href="http://www.orsoon.com/Soft/11182.html" target="_blank" rel="external">ColorPix</a> 取色版 </li>
-<li><a href="http://cdc.tencent.com/?p=3268" target="_blank" rel="external">Dorado</a> 标注</li>
-<li><a href="#">FastStone Capture</a> 屏幕截图</li>
-<li>ColorImpact 配色工具</li>
-</ul>
-</li>
-<li>浏览器<ul>
-<li>Chrome / Opera / Safari   </li>
-<li>Firefox </li>
-<li>IE9(IE77/8) / VMLite(IE6)</li>
-<li>Opera Mobile Emulator</li>
-</ul>
-</li>
-<li>调试工具<ul>
-<li><a href="http://ued.taobao.com/blog/2012/06/debug-with-chrome-dev-tool/" target="_blank" rel="external">Chrome Develpoer Tool</a></li>
-<li>IE DevelpoerToolBar</li>
-<li>Fiddler</li>
-<li><a href="http://www.flinto.com" target="_blank" rel="external">Flinto</a> 移动端调试</li>
-</ul>
-</li>
-<li>版本控制<ul>
-<li>Svn / TortoiesSVN</li>
-<li>Git / Github</li>
-</ul>
-</li>
-<li>文档工具<ul>
-<li>ST3 + Markdown Preview </li>
-<li>JsDOC</li>
-</ul>
-</li>
-<li>部署工具<ul>
-<li><a href="http://www.99css.com/archives/542" target="_blank" rel="external">CSSGaga</a> - 压缩/合并/优化</li>
-<li>YUICompressor 压缩</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>个人管理<ul>
-<li>思维 ：Xmind / Nao</li>
-<li>笔记 ：Evernote</li>
-<li>书签 ：XMarks / Pocket</li>
-<li>文档 ：TotalCommander</li>
-<li>云盘 ：Baidu</li>
-<li>邮箱 ：Outlook</li>
-<li>日历 ：Google / 人生日历</li>
-<li>时间 ：Pomotodo</li>
-<li>翻译 ：Youdao / QTranslate</li>
-<li>健康 ：f.lux (屏幕色温)</li>
-<li>知识<ul>
-<li>获取 ：book /  blog / zhihu / github / share</li>
-<li>写作 ：ST3 + Markdown Preview</li>
-<li>总结 ：github / weixin / weibo / zhihu / website  / book  </li>
-</ul>
-</li>
-</ul>
-</li>
-<li>装机必备<ul>
-<li>杀毒 ：MSE</li>
-<li>清理 ：CCleaner</li>
-<li>恢复 ：Recuva</li>
-<li>办公 ：WPS</li>
-<li>看图 ：ACDSee</li>
-<li>阅读 ：Sumatra PDF </li>
-<li>音乐 ：AirPlay</li>
-<li>视频 ：PotPlayer</li>
-<li>解压 ：WinRAR</li>
-<li>启动 ：Launchy</li>
-</ul>
-</li>
-</ul>
-<p>####Chrome 扩展插件</p>
-<ul>
-<li>版本下载<ul>
-<li>两版本共存<ul>
-<li>Chrome Canary (开发)</li>
-<li>Chrome (生活)</li>
-</ul>
-</li>
-<li>商店访问较慢<ul>
-<li>配置 <a href="#">Host</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>前端开发<ul>
-<li>性能优化 ：<a href="https://developers.google.com/speed/docs/insights/using_chrome" target="_blank" rel="external">PageSpeed</a></li>
-<li>窗口大小 ：<a href="https://chrome.google.com/webstore/detail/window-resizer/kkelicaakdanhinjdeammmilcgefonfh/related" target="_blank" rel="external">Window Resizer</a></li>
-<li>字体识别 ：<a href="https://chrome.google.com/webstore/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm/related" target="_blank" rel="external">WhatFont</a></li>
-<li>自动刷新 ：<a href="https://chrome.google.com/webstore/detail/njoipeaphfnaplplihpbgndfojhdhmjo" target="_blank" rel="external">Chrome Reload</a></li>
-<li>清除缓存 ：<a href="https://chrome.google.com/webstore/detail/clear-cache/cppjkneekbjaeellbfkmgnhonkkjfpdn" target="_blank" rel="external">Clear Cache</a></li>
-<li>前端助手 ：<a href="https://chrome.google.com/webstore/detail/web%E5%89%8D%E7%AB%AF%E5%8A%A9%E6%89%8Bfehelper/pkgccpejnmalmdinmhkkfafefagiiiad" target="_blank" rel="external">FeHelper</a></li>
-<li>JS格式化 ：<a href="https://chrome.google.com/webstore/detail/pretty-beautiful-javascri/piekbefgpgdecckjcpffhnacjflfoddg" target="_blank" rel="external">Pretty Beautiful Javascript</a></li>
-<li>二维码生成器 ：<a href="https://chrome.google.com/webstore/detail/%E7%AE%80%E5%8D%95-qr-%E7%94%9F%E6%88%90%E5%99%A8/ajaomcmkalmeeahjfdklkcjbljhbokjl" target="_blank" rel="external">QR</a></li>
-<li>网页兼容性检测 ：<a href="https://chrome.google.com/webstore/detail/fcillahbnhlpombgccogflhmgocfifma" target="_blank" rel="external">w3help</a></li>
-</ul>
-</li>
-<li>辅助工具<ul>
-<li>风景天气 ：<a href="https://chrome.google.com/webstore/detail/laookkfknpbbblfpciffpaejjkokdgca" target="_blank" rel="external">Momentum</a></li>
-<li>广告拦截 ：<a href="https://chrome.google.com/webstore/detail/adkill-and-media-download/lcibdonokophlabplhpmmmjjbgohgcok" target="_blank" rel="external">Adkill</a> / <a href="https://chrome.google.com/webstore/detail/adblock/gighmmpiobklfepjocnamgkkbiglidom/related?hl=zh-CN" target="_blank" rel="external">AdBlock</a></li>
-<li>鼠标手势 ：<a href="https://chrome.google.com/webstore/detail/crxmouse/jlgkpaicikihijadgifklkbpdajbkhjo" target="_blank" rel="external">CrxMouse</a></li>
-<li>密码记录 ：<a href="https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd/related?hl=zh-CN" target="_blank" rel="external">LastPass</a></li>
-<li>印象笔记 ：<a href="https://chrome.google.com/webstore/detail/evernote-web-clipper/pioclpoplcdbaefihamjohnefbikjilc#" target="_blank" rel="external">剪藏</a> / <a href="https://chrome.google.com/webstore/detail/clearly/iooicodkiihhpojmmeghjclgihfjdjhj/related" target="_blank" rel="external">悦读</a></li>
-<li>时间管理 ：<a href="https://chrome.google.com/webstore/detail/pomotodo/algakdpepofkajponmledaldoloboinf/related" target="_blank" rel="external">番茄土豆</a></li>
-</ul>
-</li>
-</ul>
-<p>####Sublime Text3 扩展插件</p>
-<ul>
-<li>自动补全<ul>
-<li>jQuery 语法提示<ul>
-<li><a href="https://github.com/SublimeText/jQuery/" target="_blank" rel="external">jQuery</a></li>
-</ul>
-</li>
-<li>JavaScript 语法提示<ul>
-<li><a href="https://github.com/SublimeCodeIntel/SublimeCodeIntel" target="_blank" rel="external">SublimeCodeIntel</a></li>
-</ul>
-</li>
-<li>Handlebars 语法提示 <ul>
-<li><a href="https://sublime.wbond.net/packages/Handlebars" target="_blank" rel="external">Handlebars</a></li>
-</ul>
-</li>
-<li>JsDOC 注释补全<ul>
-<li><a href="https://github.com/SublimeCodeIntel/SublimeCodeIntel" target="_blank" rel="external">DocBlockr</a></li>
-</ul>
-</li>
-<li>Src 文件路径补全 <ul>
-<li><a href="https://github.com/BoundInCode/AutoFileName" target="_blank" rel="external">AutoFileName</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>代码格式化<ul>
-<li>HTML/CSS/JavaScript 标准模版 <ul>
-<li><a href="https://github.com/kairyou/SublimeTmpl" target="_blank" rel="external">SublimeTmpl</a></li>
-</ul>
-</li>
-<li>HTML/CSS/JavaScript 代码格式化 基于(Nodejs)<ul>
-<li><a href="https://github.com/victorporof/Sublime-HTMLPrettify" target="_blank" rel="external">HTMLPrettify</a></li>
-</ul>
-</li>
-<li>CSS 按重要性排序格式化<ul>
-<li><a href="https://github.com/csscomb/sublime-csscomb" target="_blank" rel="external">CSScomb</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>代码校验<ul>
-<li>HTML 代码校验 <ul>
-<li><a href="https://github.com/dubharmonic/Sublime-W3CValidators" target="_blank" rel="external">W3CValidators</a> / HTMLLint</li>
-</ul>
-</li>
-<li>CSS  代码校验 基于(JAVA)<ul>
-<li><a href="https://github.com/austinhappel/sublime-csslint" target="_blank" rel="external">CSSLint</a></li>
-</ul>
-</li>
-<li>JavaScript 代码校验 基于(NodeJS)<ul>
-<li><a href="https://github.com/darrenderidder/Sublime-JSLint" target="_blank" rel="external">JSLint</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>####Grunt 自动化部署插件 <a href="http://gruntjs.com/plugins" target="_blank" rel="external">Plugins</a></p>
-<ul>
-<li>压缩<ul>
-<li><a href="https://github.com/gruntjs/grunt-contrib-htmlmin" target="_blank" rel="external">htmlmin</a></li>
-<li><a href="https://github.com/gruntjs/grunt-contrib-cssmin" target="_blank" rel="external">cssmin</a></li>
-<li><a href="https://github.com/gruntjs/grunt-contrib-uglify" target="_blank" rel="external">uglify</a></li>
-<li><a href="https://github.com/gruntjs/grunt-contrib-imagemin" target="_blank" rel="external">imagemin</a></li>
-</ul>
-</li>
-<li>合并<ul>
-<li><a href="https://github.com/gruntjs/grunt-contrib-concat" target="_blank" rel="external">concat</a></li>
-</ul>
-</li>
-<li>检测<ul>
-<li><a href="https://www.npmjs.org/package/grunt-html-validation" target="_blank" rel="external">html-validation</a></li>
-<li><a href="https://github.com/gruntjs/grunt-contrib-jshint" target="_blank" rel="external">jshint</a></li>
-<li><a href="https://github.com/gruntjs/grunt-contrib-csslint" target="_blank" rel="external">csslint</a></li>
-<li><a href="https://github.com/brandonramirez/grunt-jsonlint" target="_blank" rel="external">jsonlint</a></li>
-<li><a href="http://jgable.github.io/grunt-lesslint" target="_blank" rel="external">lesslint</a></li>
-</ul>
-</li>
-<li>预编译<ul>
-<li><a href="https://github.com/gruntjs/grunt-contrib-handlebars" target="_blank" rel="external">handlebars</a></li>
-<li><a href="https://github.com/gruntjs/grunt-contrib-less" target="_blank" rel="external">less</a></li>
-</ul>
-</li>
-<li>监控<ul>
-<li><a href="https://github.com/gruntjs/grunt-contrib-watch" target="_blank" rel="external">watch</a></li>
-</ul>
-</li>
-<li>文档<ul>
-<li><a href="https://github.com/treasonx/grunt-markdown" target="_blank" rel="external">markdown</a></li>
-<li><a href="https://github.com/krampstudio/grunt-jsdoc" target="_blank" rel="external">jsdoc</a></li>
-</ul>
-</li>
-<li>web 服务<ul>
-<li><a href="https://github.com/gruntjs/grunt-contrib-connect" target="_blank" rel="external">connect</a></li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/10/14/WebTool/" data-id="ciua1t5ky00013x4yta4dwyg2" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前段开发工具库/">前段开发工具库</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebRTC/">WebRTC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前段开发工具库/">前段开发工具库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/团队编码规范/">团队编码规范</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/WebRTC/" style="font-size: 10px;">WebRTC</a> <a href="/tags/前段开发工具库/" style="font-size: 10px;">前段开发工具库</a> <a href="/tags/团队编码规范/" style="font-size: 10px;">团队编码规范</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2016/10/15/WebRTC/">WebRTC</a>
-          </li>
-        
-          <li>
-            <a href="/2016/10/14/团队编码规范/">团队编码规范</a>
-          </li>
-        
-          <li>
-            <a href="/2016/10/14/WebTool/">前端开发工具库</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2016 Vincent CHEN<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
+    <!-- /.container -->
 </nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in the theme's configuration: index_cover -->
+<header class="intro-header" style="background-image: url('/img/home-bg.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Vincent</h1>
+                    <hr class="small">
+                    <span class="subheading">a developer for iOS and html5</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            
+                <div class="post-preview">
+    <a href="/2016/10/15/WebRTC/">
+        <h2 class="post-title">
+            WebRTC
+        </h2>
+        
+    </a>
+    <p class="post-meta">
+        <!-- Date and Author -->
+        
+        2016-10-15
+    </p>
+</div>
+<hr>
+            
+                <div class="post-preview">
+    <a href="/2016/10/14/团队编码规范/">
+        <h2 class="post-title">
+            团队编码规范
+        </h2>
+        
+    </a>
+    <p class="post-meta">
+        <!-- Date and Author -->
+        
+        2016-10-14
+    </p>
+</div>
+<hr>
+            
+                <div class="post-preview">
+    <a href="/2016/10/14/WebTool/">
+        <h2 class="post-title">
+            前端开发工具库
+        </h2>
+        
+    </a>
+    <p class="post-meta">
+        <!-- Date and Author -->
+        
+        2016-10-14
+    </p>
+</div>
+<hr>
+            
+
+            <ul class="pager">
     
+    
+</ul>
+        </div>
+    </div>
+</div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+               
+            </div>
+        </div>
+    </div>
+</footer>
 
 
-<script src="/js/script.js"></script>
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 
-  </div>
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
 </body>
+
 </html>
