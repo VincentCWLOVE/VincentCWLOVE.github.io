@@ -175,19 +175,16 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>#计算机网络</p>
-<pre><code>对于程序员来讲，对计算机网络的了解是必要的。特别是基于IP和TCP/IP的网络以及Internet。此篇文章将向各位介绍关于计算机网络的相关基本知识        
-</code></pre><p>###网络的定义<br>网络是用线缆链接，数据位转换为通过线缆移动的<code>电磁波</code>。对于无线网络则是通过红外光和微波传输数据。</p>
-<p>###网络中的节点(node)<br>当你将你的计算机连接到计算机网络中，我们就将此计算机称为<code>节点</code>。虽然大多数节点都是计算机，但是像打印机、路由器、网桥、网关等终端也是节点，只要它们连接到计算机网络中。</p>
+                <h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><pre><code>对于程序员来讲，对计算机网络的了解是必要的。特别是基于IP和TCP/IP的网络以及Internet。此篇文章将向各位介绍关于计算机网络的相关基本知识        
+</code></pre><h3 id="网络的定义"><a href="#网络的定义" class="headerlink" title="网络的定义"></a>网络的定义</h3><p>网络是用线缆链接，数据位转换为通过线缆移动的<code>电磁波</code>。对于无线网络则是通过红外光和微波传输数据。</p>
+<h3 id="网络中的节点-node"><a href="#网络中的节点-node" class="headerlink" title="网络中的节点(node)"></a>网络中的节点(node)</h3><p>当你将你的计算机连接到计算机网络中，我们就将此计算机称为<code>节点</code>。虽然大多数节点都是计算机，但是像打印机、路由器、网桥、网关等终端也是节点，只要它们连接到计算机网络中。</p>
 <p>我们将每个连入计算机网络的设备称作节点，对于每个节点来讲，计算机网络都会分配唯一的地址，这个地址是用于标识节点的一连串字节。事实上，我们两台连入计算机网络中的设备，要想通信，必须要知道对方的<code>节点地址</code>。</p>
 <p>对于<code>节点地址</code>，事实上是一组数字。例如：<code>192.168.1.1</code>,这组数字就像人的身份证号码一样，可以唯一标识一个节点。</p>
 <p>然而对于一连串数字并不方便记忆，于是节点还有可以帮助人们方便记忆的名称。比如:<code>www.baidu.com</code>。对于计算机节点来讲，一个名称指一个地址，但是名称并不锁定一个地址，如果你拥有多个节点地址，你可以让它都叫这个名称。<br>对于<code>节点名称</code>,我们更多叫它域名。(域名需要购买和备案的)</p>
-<p>###计算机在计算机网络中通信</p>
-<p>计算机在网络中是通过 <code>包</code> 进行通信的。流经网络的数据被分割成很多个小块，我们将这些小块称为 <code>包（packet）</code>。在通信中，我们将每个<code>包</code>都单独加以处理，使<code>包</code>中都包含 <code>由谁发送</code>和<code>将发往何处</code>等的信息。</p>
+<h3 id="计算机在计算机网络中通信"><a href="#计算机在计算机网络中通信" class="headerlink" title="计算机在计算机网络中通信"></a>计算机在计算机网络中通信</h3><p>计算机在网络中是通过 <code>包</code> 进行通信的。流经网络的数据被分割成很多个小块，我们将这些小块称为 <code>包（packet）</code>。在通信中，我们将每个<code>包</code>都单独加以处理，使<code>包</code>中都包含 <code>由谁发送</code>和<code>将发往何处</code>等的信息。</p>
 <p>那么我们如何来处理<code>每个包</code>呢？为了解决这个问题，我们就定义了一些<code>协议</code>，协议定义了计算机如何通信的一组明确的规则:<code>包括地址格式、数据如何分包等</code>。</p>
 <p>针对网络通信的不同方面，大家定义了很多不同的<code>协议</code>。例如超文本传输协议<code>HTTP</code>,定义了web浏览器如何与服务器通信。</p>
-<p>###在计算机网络中常用的协议有哪些？</p>
-<table>
+<h3 id="在计算机网络中常用的协议有哪些？"><a href="#在计算机网络中常用的协议有哪些？" class="headerlink" title="在计算机网络中常用的协议有哪些？"></a>在计算机网络中常用的协议有哪些？</h3><table>
 <thead>
 <tr>
 <th>协议</th>
@@ -235,9 +232,10 @@
 </tr>
 </tbody>
 </table>
-<p>###网络协议的基础-TCP/IP<br>        TCP/IP协议是网络的基础，是Internet的语言，可以说没有TCP/IP协议就没有互联网的今天。<br>        TCP/IP是“transmission Control Protocol/Internet Protocol”的简写，中文译名为传输控制协议/互联网络协议）协议， TCP/IP（传输控制协议/网间协议）是一种网络通信协议，它规范了网络上的所有通信设备，尤其是一个主机与另一个主机之间的数据往来格式以及传送方式。TCP/IP是INTERNET的基础协议，也是一种电脑数据打包和寻址的标准方法。在数据传送中，可以形象地理解为有两个信封，TCP和IP就像是信封，要传递的信息被划分成若干段，每一段塞入一个TCP信封，并在该信封面上记录有分段号的信息，再将TCP信封塞入IP大信封，发送上网。在接受端，一个TCP软件包收集信封，抽出数据，按发送前的顺序还原，并加以校验，若发现差错，TCP将会要求重发。因此，TCP/IP在INTERNET中几乎可以无差错地传送数据。 对普通用户来说，并不需要了解网络协议的整个结构，仅需了解IP的地址格式，即可与世界各地进行网络通信</p>
-<p>关于TCP/IP的基础理论比较多，在此给大家推荐<a href="http://www.cnblogs.com/fengzanfeng/articles/1339347.html" target="_blank" rel="external">一个博客</a> </p>
-<p>###URL<br>URL用于标识Internet上资源位置。它指定用于访问服务器的协议、服务器名称以及文件在服务器上面的位置。如：<code>http://iosseventeenclass.sinaapp.com/myapp/index.php</code></p>
+<h3 id="网络协议的基础-TCP-IP"><a href="#网络协议的基础-TCP-IP" class="headerlink" title="网络协议的基础-TCP/IP"></a>网络协议的基础-TCP/IP</h3><pre><code>TCP/IP协议是网络的基础，是Internet的语言，可以说没有TCP/IP协议就没有互联网的今天。
+TCP/IP是“transmission Control Protocol/Internet Protocol”的简写，中文译名为传输控制协议/互联网络协议）协议， TCP/IP（传输控制协议/网间协议）是一种网络通信协议，它规范了网络上的所有通信设备，尤其是一个主机与另一个主机之间的数据往来格式以及传送方式。TCP/IP是INTERNET的基础协议，也是一种电脑数据打包和寻址的标准方法。在数据传送中，可以形象地理解为有两个信封，TCP和IP就像是信封，要传递的信息被划分成若干段，每一段塞入一个TCP信封，并在该信封面上记录有分段号的信息，再将TCP信封塞入IP大信封，发送上网。在接受端，一个TCP软件包收集信封，抽出数据，按发送前的顺序还原，并加以校验，若发现差错，TCP将会要求重发。因此，TCP/IP在INTERNET中几乎可以无差错地传送数据。 对普通用户来说，并不需要了解网络协议的整个结构，仅需了解IP的地址格式，即可与世界各地进行网络通信
+</code></pre><p>关于TCP/IP的基础理论比较多，在此给大家推荐<a href="http://www.cnblogs.com/fengzanfeng/articles/1339347.html" target="_blank" rel="external">一个博客</a> </p>
+<h3 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h3><p>URL用于标识Internet上资源位置。它指定用于访问服务器的协议、服务器名称以及文件在服务器上面的位置。如：<code>http://iosseventeenclass.sinaapp.com/myapp/index.php</code></p>
 <pre><code>语法：
 protocol://username@hostname:port/path/filename?query#fragment
 </code></pre><ol>
@@ -252,8 +250,7 @@ protocol://username@hostname:port/path/filename?query#fragment
 </ol>
 <pre><code>note:
     在URL中不可出现中文、空格、百分号等一些特殊字符。因此我们需要对此URL进行编码
-</code></pre><p>#####为什么要对url进行编码？</p>
-<pre><code>     我们都知道Http协议中参数的传输是&quot;key=value&quot;这种简直对形式的，如果要传多个参数就需要用“&amp;”符号对键值对进行分割。如&quot;?name1=value1&amp;name2=value2&quot;，这样在服务端在收到这种字符串的时候，会用“&amp;”分割出每一个参数，然后再用“=”来分割出参数值。 
+</code></pre><h5 id="为什么要对url进行编码？"><a href="#为什么要对url进行编码？" class="headerlink" title="为什么要对url进行编码？"></a>为什么要对url进行编码？</h5><pre><code>     我们都知道Http协议中参数的传输是&quot;key=value&quot;这种简直对形式的，如果要传多个参数就需要用“&amp;”符号对键值对进行分割。如&quot;?name1=value1&amp;name2=value2&quot;，这样在服务端在收到这种字符串的时候，会用“&amp;”分割出每一个参数，然后再用“=”来分割出参数值。 
 
   针对“name1=value1&amp;name2=value2”我们来说一下客户端到服务端的概念上解析过程: 
 上述字符串在计算机中用ASCII吗表示为： 
@@ -271,8 +268,7 @@ protocol://username@hostname:port/path/filename?query#fragment
   比如说“name1=value1”,其中value1的值是“va&amp;lu=e1”字符串，那么实际在传输    过程中就会变成这样“name1=va&amp;lu=e1”。我们的本意是就只有一个键值对，但是服    务端会解析成两个键值对，这样就产生了奇异。 
   如何解决上述问题带来的歧义呢？解决的办法就是对参数进行URL编码 
      URL编码只是简单的在特殊字符的各个字节前加上%，例如，我们对上述会产生奇异的    字符进行URL编码后结果：“name1=va%26lu%3D”，这样服务端会把紧跟在“%”后的    字节当成普通的字节，就是不会把它当成各个参数或键值对的分隔符。
-</code></pre><p>###GET和POST</p>
-<pre><code>    在iOS开发中，我们的客户端即iPhone和服务器端数据交互常用的方式有两种，GET请求和POST请求。当然还有一些请求方式，如 PUT 、 DELETE等。此节课主要是给大家讲解GET和POST请求
+</code></pre><h3 id="GET和POST"><a href="#GET和POST" class="headerlink" title="GET和POST"></a>GET和POST</h3><pre><code>    在iOS开发中，我们的客户端即iPhone和服务器端数据交互常用的方式有两种，GET请求和POST请求。当然还有一些请求方式，如 PUT 、 DELETE等。此节课主要是给大家讲解GET和POST请求
     1.GET请求
     GET请求是客户端向服务器端请求资源
     2.POST请求
@@ -281,7 +277,7 @@ protocol://username@hostname:port/path/filename?query#fragment
 
 note：
 HTTP协议的请求方法有GET、POST、HEAD、PUT、DELETE、OPTIONS、TRACE、CONNECT。
-</code></pre><p>###GET和POST请求的报文格式<br>我们这里讲到的<code>GET</code>和<code>POST</code>请求是基于<code>HTTP</code>协议之下,在<code>HTTP</code>协议下，对于<code>GET</code>和<code>POST</code>请求，它们都有规定的请求格式。</p>
+</code></pre><h3 id="GET和POST请求的报文格式"><a href="#GET和POST请求的报文格式" class="headerlink" title="GET和POST请求的报文格式"></a>GET和POST请求的报文格式</h3><p>我们这里讲到的<code>GET</code>和<code>POST</code>请求是基于<code>HTTP</code>协议之下,在<code>HTTP</code>协议下，对于<code>GET</code>和<code>POST</code>请求，它们都有规定的请求格式。</p>
 <p>HTTP报文是面向文本的，报文中的每一个字段都是一些ASCII码串，各个字段的长度是不确定的。HTTP有两类报文：请求报文和响应报文。</p>
 <p>1.请求报文</p>
 <pre><code>一个HTTP请求报文由请求行（request line）、请求头部（header）、空行和请求数据4个部分组成，下图给出了请求报文的一般格式。
