@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="a blog for iOS and html5">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Vincent CHEN">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="小程序全局配置之app.json"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="a blog for iOS and html5" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Vincent"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>小程序全局配置之app.json - Vincent</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Vincent</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/VincentCWLOVE">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>小程序全局配置之app.json</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-10-19
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/微信小程序/">#微信小程序</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <blockquote>
+<p>当我们使用开发工具创建好我们的工程时候，给到我们的 <code>app.json</code> 文件并不是很完整，我们可以配置更多的参数，来让我们的小程序更加的强大</p>
+</blockquote>
+<h3 id="包含所有配置项的-app-json"><a href="#包含所有配置项的-app-json" class="headerlink" title="包含所有配置项的 app.json"></a>包含所有配置项的 <code>app.json</code></h3><pre><code class="javascript">{
+  <span class="string">"pages"</span>: [
+    <span class="string">"pages/index/index"</span>,
+    <span class="string">"pages/logs/logs"</span>
+  ],
+  <span class="string">"window"</span>: {
+    <span class="string">"navigationBarBackgroundColor"</span>: <span class="string">"#ffffff"</span>,
+    <span class="string">"navigationBarTextStyle"</span>: <span class="string">"black"</span>,
+    <span class="string">"navigationBarTitleText"</span>: <span class="string">"小程序app.json文件"</span>,
+    <span class="string">"backgroundColor"</span>: <span class="string">"#eeeeee"</span>,
+    <span class="string">"backgroundTextStyle"</span>: <span class="string">"light"</span>
+  },
+  <span class="string">"tabBar"</span>: {
+    <span class="string">"color"</span>: <span class="string">"#353535"</span>,
+    <span class="string">"selectedColor"</span>: <span class="string">"#3cc51f"</span>,
+    <span class="string">"borderStyle"</span>: <span class="string">"white"</span>,
+    <span class="string">"backgroundColor"</span>: <span class="string">"#ffffff"</span>,
+    <span class="string">"list"</span>: [{
+      <span class="string">"pagePath"</span>: <span class="string">"pages/index/index"</span>,
+      <span class="string">"iconPath"</span>: <span class="string">"images/icon_API.png"</span>,
+      <span class="string">"selectedIconPath"</span>: <span class="string">"images/icon_API_HL.png"</span>,
+      <span class="string">"text"</span>: <span class="string">"首页"</span>
+    }, {
+      <span class="string">"pagePath"</span>: <span class="string">"pages/logs/logs"</span>,
+      <span class="string">"iconPath"</span>: <span class="string">"images/icon_component.png"</span>,
+      <span class="string">"selectedIconPath"</span>: <span class="string">"images/icon_component_HL.png"</span>,
+      <span class="string">"text"</span>: <span class="string">"日志"</span>
+    }]
+  },
+  <span class="string">"networkTimeout"</span>: {
+    <span class="string">"request"</span>: <span class="number">10000</span>,
+    <span class="string">"downloadFile"</span>: <span class="number">10000</span>
+  },
+  <span class="string">"debug"</span>: <span class="literal">true</span>
+}
+</code></pre>
+<h3 id="配置项释义"><a href="#配置项释义" class="headerlink" title="配置项释义"></a>配置项释义</h3><ul>
+<li><p><strong><code>pages</code></strong></p>
+<p>  必填配置，设置页面路径，数组类型</p>
+</li>
+<li><p><strong><code>window</code></strong></p>
+<p>  可选配置，设置默认页面的窗口表现，对象类型</p>
+<ul>
+<li><p><code>navigationBarBackgroundColor</code>: 导航栏背景颜色，如”#000000”,十六进制颜色</p>
+</li>
+<li><p><code>navigationBarTextStyle</code>:导航栏标题颜色，仅支持 black/white</p>
+</li>
+<li><p><code>navigationBarTitleText</code>:    导航栏标题文字内容</p>
+</li>
+<li><p><code>backgroundColor</code>:窗口的背景色，十六进制颜色</p>
+</li>
+<li><p><code>backgroundTextStyle</code>:下拉背景字体、loading 图的样式，仅支持 dark/light</p>
+</li>
+<li><p><code>enablePullDownRefresh</code>:是否开启下拉刷新，后面讲解</p>
+</li>
+</ul>
+</li>
+<li><p><strong><code>tabBar</code></strong></p>
+<p>  可选配置，如果我们的小程序是一个多 tab 应用（客户端窗口的底部有tab栏可以切换页面），那么我们可以通过 tabBar 配置项指定 tab 栏的表现，以及 tab 切换时显示的对应页面。</p>
+<ul>
+<li><p><code>color</code>    :tab 上的文字默认颜色,必填</p>
+</li>
+<li><p><code>selectedColor</code>:tab 上的文字选中时的颜色，必填</p>
+</li>
+<li><p><code>backgroundColor</code>:tab的背景色,必填，十六进制颜色</p>
+</li>
+<li><p><code>borderStyle</code>:tabbar上边框的颜色， 仅支持 black/white,可选</p>
+</li>
+<li><p><code>list</code>:tab 的列表，最少2个、最多5个 tab,以下四个参数必填</p>
+<ul>
+<li><p><code>pagePath</code>    :    页面路径，必须在 pages 中先定义</p>
+</li>
+<li><p><code>text</code>:    tab 上按钮文字</p>
+</li>
+<li><p><code>iconPath</code>    :    图片路径，icon 大小限制为40kb</p>
+</li>
+<li><p><code>selectedIconPath</code>    :选中时的图片路径，icon 大小限制为40kb</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong><code>networkTimeout</code></strong></p>
+<p>  可选配置，可以设置各种网络请求的超时时间。</p>
+<ul>
+<li><p><code>request</code>:  发起https请求的超时时间，单位毫秒</p>
+</li>
+<li><p><code>connectSocket</code>:  创建一个 WebSocket 连接的超时时间，单位毫秒</p>
+</li>
+<li><p><code>uploadFile</code>:      将本地资源上传到开发者服务器的超时时间，单位毫秒</p>
+</li>
+<li><p><code>downloadFile</code>: 下载文件资源到本地的超时时间，单位毫秒</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong><code>debug</code></strong></p>
+<p>  可选配置</p>
+<p>  可以在开发者工具中开启 debug 模式，在开发者工具的控制台面板，调试信息以 info 的形式给出，其信息有Page的注册，页面路由，数据更新，事件触发 。 可以帮助开发者快速定位一些常见的问题。</p>
+</li>
+</ul>
+<p>###本文代码<br><a href="https://github.com/VincentCWLOVE/wechatpra" target="_blank" rel="external">请查看此目录下面的 <code>wx1</code> 文件夹</a></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+               
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
