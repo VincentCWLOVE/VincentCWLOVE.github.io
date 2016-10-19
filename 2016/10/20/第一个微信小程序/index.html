@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="a blog for iOS and html5">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Vincent CHEN">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="第一个微信小程序"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="a blog for iOS and html5" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Vincent"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>第一个微信小程序 - Vincent</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Vincent</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/VincentCWLOVE">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>第一个微信小程序</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-10-20
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/微信小程序/">#微信小程序</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <blockquote>
+<p>准备好开始我们第一个微信小程序了吗？</p>
+</blockquote>
+<h4 id="创建我们的工程"><a href="#创建我们的工程" class="headerlink" title="创建我们的工程"></a>创建我们的工程</h4><p><img src="/img/start.gif" width="100%"></p>
+<h4 id="getApp"><a href="#getApp" class="headerlink" title="getApp()"></a><code>getApp()</code></h4><p><code>var app = getApp()</code>获取到当前小程序实例对象,可用此实例对象访问到全局变量和当前页面实例(后面会讲解)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="built_in">console</span>.log(app.getCurrentPage())</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(app.globalData)</div></pre></td></tr></table></figure>
+<h4 id="Page-函数的介绍"><a href="#Page-函数的介绍" class="headerlink" title="Page()函数的介绍"></a><code>Page()</code>函数的介绍</h4><p><code>Page()</code> 函数用来注册一个页面。接受一个 object 参数，其指定页面的初始数据、生命周期函数、事件处理函数等</p>
+<ul>
+<li><p><code>data</code> : 页面的初始数据,一个<code>json</code>格式的对象类型，将会用来显示在<code>.wxml</code>上</p>
+</li>
+<li><p><code>onLoad</code> : 生命周期函数–监听页面加载,一个页面只会调用一次;有iOS编程基础的同学会知道，相当于 <code>viewDidLoad</code></p>
+</li>
+<li><p><code>onReady</code> : 生命周期函数–监听页面初次渲染完成,每次打开页面都会调用一次。有iOS编程基础的同学会知道，相当于 <code>viewWillAppear</code></p>
+</li>
+<li><p><code>onShow</code> : 生命周期函数–监听页面初次渲染完成,每次打开页面都会调用一次。有iOS编程基础的同学会知道，相当于 <code>viewDidAppear</code></p>
+</li>
+<li><p><code>onHide</code> : 生命周期函数–监听页面隐藏,有iOS编程基础的同学会知道，相当于 <code>viewWillDisAppear</code>，实质上是当navigateTo或底部tab切换时调用</p>
+</li>
+<li><p><code>onUnload</code> :     生命周期函数–监听页面卸载,有iOS编程基础的同学会知道，相当于 <code>viewDidDisAppear</code>，实质上是当redirectTo或navigateBack的时候调用</p>
+</li>
+<li><p><code>onPullDownRefresh</code> :     页面相关事件处理函数–监听用户下拉动作（后面会讲解）</p>
+</li>
+<li><p>开发者可以添加任意的函数或数据到 object 参数中，用 this 可以访问（后面会讲解）</p>
+</li>
+</ul>
+<h4 id="在index-js中键入如下代码："><a href="#在index-js中键入如下代码：" class="headerlink" title="在index.js中键入如下代码："></a>在<code>index.js</code>中键入如下代码：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//index.js</span></div><div class="line"><span class="comment">//获取应用实例</span></div><div class="line"><span class="keyword">var</span> app = getApp()</div><div class="line">Page(&#123;</div><div class="line">    <span class="attr">data</span>: &#123;</div><div class="line">        <span class="attr">name</span>: <span class="string">"vincent"</span>,</div><div class="line">        <span class="attr">description</span>: <span class="string">"a developer for html5 and iOS"</span>,</div><div class="line">        <span class="attr">text</span>: <span class="string">"待我代码编成,娶你为妻可好"</span>,</div><div class="line">        <span class="attr">userInfo</span>:&#123;&#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">//开始加载数据</span></div><div class="line">    onLoad: <span class="function"><span class="keyword">function</span>(<span class="params">options</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">"onLoad"</span>)</div><div class="line">         <span class="keyword">var</span> that = <span class="keyword">this</span></div><div class="line">        <span class="comment">//当我们创建完程序后，在app.js中就有一个getUserInfo方法，我们用app实例调用getUserInfo方法获取当前用户信息，并赋值给userInfo</span></div><div class="line">        app.getUserInfo(<span class="function"><span class="keyword">function</span>(<span class="params">cur_userInfo</span>)</span>&#123;</div><div class="line">            <span class="comment">//更新数据</span></div><div class="line">            that.setData(&#123;</div><div class="line">                <span class="comment">//获取到当前用户信息cur_userInfo赋值给页面变量userInfo</span></div><div class="line">                userInfo:cur_userInfo</div><div class="line">            &#125;)</div><div class="line">        &#125;)</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">//开始渲染</span></div><div class="line">    onReady: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">"onReady"</span>)</div><div class="line">    &#125;,</div><div class="line">    </div><div class="line">    <span class="attr">onShow</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">"onShow"</span>)</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">onHide</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">"onHide"</span>)</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">onUnload</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">"onUnload"</span>)</div><div class="line">    &#125;,</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h4 id="在index-wxml中键入如下代码："><a href="#在index-wxml中键入如下代码：" class="headerlink" title="在index.wxml中键入如下代码："></a>在<code>index.wxml</code>中键入如下代码：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;view class="container"&gt;</div><div class="line">  &lt;view  bindtap="bindViewTap" class="userinfo"&gt;</div><div class="line">    &lt;image class="userinfo-avatar" src="&#123;&#123;userInfo.avatarUrl&#125;&#125;" background-size="cover"&gt;&lt;/image&gt;</div><div class="line">    &lt;text class="userinfo-nickname"&gt;&#123;&#123;name&#125;&#125;&lt;/text&gt;</div><div class="line">    &lt;text class="userinfo-nickname"&gt;&#123;&#123;description&#125;&#125;&lt;/text&gt;</div><div class="line">  &lt;/view&gt;</div><div class="line">  &lt;view class="usermotto"&gt;</div><div class="line">    &lt;text class="user-motto"&gt;&#123;&#123;text&#125;&#125;&lt;/text&gt;</div><div class="line">  &lt;/view&gt;</div><div class="line">&lt;/view&gt;</div></pre></td></tr></table></figure>
+<p>###本文代码<br><a href="https://github.com/VincentCWLOVE/wechatpra" target="_blank" rel="external">请查看此目录下面的 <code>wx2</code> 文件夹</a></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+               
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
