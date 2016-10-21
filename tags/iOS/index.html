@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="OC和JS交互"/>
+        <meta property="og:title" content="Vincent"/>
     
 
     <!--Open Graph Description-->
@@ -33,7 +33,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="article" />
+        <meta property="og:type" content="website" />
     
 
     <!--Page Cover-->
@@ -44,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>OC和JS交互 - Vincent</title>
+    <title>iOS - Vincent</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -127,103 +127,50 @@
 </nav>
 
     <!-- Main Content -->
-    <!-- Page Header -->
-<!-- Set your background image for this header in your post front-matter: cover -->
+    
 
+<!-- Page Header -->
+<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('/img/home-bg.png')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <h1>OC和JS交互</h1>
-                    
-                    <span class="meta">
-                        <!-- Date and Author -->
-                        
-                        2016-10-22
-                    </span>
+                <div class="site-heading">
+                    <h1>#iOS</h1>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-
-            <!-- Tags and categories -->
-           
-                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
-                    
-                        
-
-
-<a href="/tags/OC和JS交互/">#OC和JS交互</a> <a href="/tags/iOS/">#iOS</a>
-
-
-                    
-                </div>
-                <div class="col-lg-4 col-md-5 post-categories">
-                    
-                </div>
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             
-
-            <!-- Gallery -->
+                <div class="post-preview">
+    <a href="/2016/10/22/OC和JS交互/">
+        <h1 class="post-title archive">
+            OC和JS交互
+        </h1>
+    </a>
+    <p class="post-meta archive">
+        <!-- Date and Author -->
+        
+        2016-10-22
+    </p>
+</div>
             
-
-            <!-- Post Main Content -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <blockquote>
-<p>公司因为运营推广的原因，通常需要在自己的原生的app产品上做推广，而开发出一个新版原生app到上线，往往跟不上市场推广、营销的步伐。因此混合型应用受到很多公司青睐，但是开发混合型应用设计到技术点无非就是web端和手机移动终端的交互。此篇文章将向大家介绍，iOS的OC与web端的js交互。</p>
-</blockquote>
-<h3 id="交互方式"><a href="#交互方式" class="headerlink" title="交互方式"></a>交互方式</h3><ol>
-<li>iOS7之后的JavaScriptCore</li>
-<li>拦截协议</li>
-<li>第三方框架WebViewJavaScriptBridge</li>
-<li><p>iOS8之后WKWebView</p>
-<p> 其中WebViewJavaScriptBridge是基于拦截协议的封装，需要同学们看文档，这里不做介绍</p>
-<p> WKWebView对于iOS7的系统的手机无法使用，因此也不作介绍</p>
-</li>
-</ol>
-<h3 id="OC执行JS代码"><a href="#OC执行JS代码" class="headerlink" title="OC执行JS代码"></a>OC执行JS代码</h3><p>1 . 获取web页面的标题 title</p>
-<pre>
- NSString *webTitle = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
-</pre>
-
-<p>2 . 获取web页面的链接 url</p>
-<pre>
-    NSString *url = [webView stringByEvaluatingJavaScriptFromString:@"document.location.href"];
-</pre>
-
-<p>3 . 关于JavaScriptCore<br></p>
-<pre>
-    JavaScriptCore中的类及协议
-    <li>JSContext:给JavaScript提供运行的上下文环境</li>
-    <li>JSValue:JavaScript和Object-C数据和方法的桥梁</li>
-    <li>JSManagedValue:管理数据和方法的类</li>
-    <li>JSVirtualMachine:处理线程相关，使用较少</li>
-    <li>JSExport:一个协议，如果采用协议的方法交互，自己定义的协议必须遵循此协议</li>
-</pre>
-
-<p>4 . 代码示例：<br><a herf="https://github.com/VincentCWLOVE/OC_JS" alt="">点击下载</a></p>
-
-
-                
-            </div>
-
-            <!-- Comments -->
-            
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    
-
-
-                </div>
-            
+            <div class="archive-before-pagination"></div>
+            <ul class="pager">
+    
+    
+</ul>
         </div>
     </div>
-</article>
+</div>
+
+
 
     <!-- Footer -->
     <hr />
