@@ -177,169 +177,81 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>#iOS绘图<br>&gt;<br>iOS支持两套图形API框架：Core Graphics/QuartZ 2D 和OpenGL ES。本系列文章将向大家介绍这两套API框架</p>
-<p>###Core Graphics Framework/QuartZ 2D<br>Core Graphics Framework是一套基于C的API框架，使用了Quartz作为绘图引擎。它提供了低级别、轻量级、高保真度的2D渲染。该框架可以用于基于路径的绘图、变换、颜色管理、脱屏渲染，模板、渐变、遮蔽、图像数据管理、图像的创建、遮罩以及PDF文档的创建、显示和分析。</p>
+                <blockquote>
+<p>iOS支持两套图形API框架：Core Graphics/QuartZ 2D 和OpenGL ES。本系列文章将向大家介绍这两套API框架</p>
+</blockquote>
+<h3 id="Core-Graphics-Framework-QuartZ-2D"><a href="#Core-Graphics-Framework-QuartZ-2D" class="headerlink" title="Core Graphics Framework/QuartZ 2D"></a>Core Graphics Framework/QuartZ 2D</h3><p>Core Graphics Framework是一套基于C的API框架，使用了Quartz作为绘图引擎。它提供了低级别、轻量级、高保真度的2D渲染。该框架可以用于基于路径的绘图、变换、颜色管理、脱屏渲染，模板、渐变、遮蔽、图像数据管理、图像的创建、遮罩以及PDF文档的创建、显示和分析。</p>
 <p>QuartZ 2D是苹果公司开发的一套API，它是Core Graphics Framework的一部分</p>
 <p><a href="https://developer.apple.com/library/ios/samplecode/QuartzDemo/Listings/ReadMe_txt.html" title="Title" target="_blank" rel="external">点我进入苹果官方文档</a> </p>
-<p>###OpenGL ES<br>OpenGL ES是跨平台的图形API，属于OpenGL的一个简化版本。OpenGL ES是应用程序编程接口，该接口描述了方法、结构、函数应具有的行为以及应该如何被使用的语义。</p>
+<h3 id="OpenGL-ES"><a href="#OpenGL-ES" class="headerlink" title="OpenGL ES"></a>OpenGL ES</h3><p>OpenGL ES是跨平台的图形API，属于OpenGL的一个简化版本。OpenGL ES是应用程序编程接口，该接口描述了方法、结构、函数应具有的行为以及应该如何被使用的语义。</p>
 <p>因为OpenGL ES只是定义了应用程序编程接口，具体如何去实现，需要开发者具有扎实计算机图形变换的扎实基础。</p>
-<p>###使用QuartZ 2D</p>
-<ol>
-<li><p><strong>使用原理</strong></p>
-<pre><code>在iOS上，所有的绘制图形都发生在UIView对象的所表示的矩形区域内。如果您使用系统提供的视图，绘制工作会自动得到处理。然而，如果您定义自己的定制视图，则必须自行提供绘制代码。例如，咱们定一个类是继承于UIView，那么我们会发现有一个被注释掉的 drawRect 方法，如图：
-</code></pre></li>
-</ol>
-<p><img src="/img/iOSDraw.png" width="100%"></p>
-<pre><code>如果我们不将这个注释方法打开，那么系统将会按照自己的逻辑绘制视图；倘若开发者需要自己定制视图，那么需要在 drawRect 方法里提供绘制代码。
+<h3 id="使用QuartZ-2D"><a href="#使用QuartZ-2D" class="headerlink" title="使用QuartZ 2D"></a>使用QuartZ 2D</h3><h5 id="使用原理"><a href="#使用原理" class="headerlink" title="使用原理"></a><strong>使用原理</strong></h5><p>在iOS上，所有的绘制图形都发生在UIView对象的所表示的矩形区域内。如果您使用系统提供的视图，绘制工作会自动得到处理。然而，如果您定义自己的定制视图，则必须自行提供绘制代码。例如，咱们定一个类是继承于UIView，那么我们会发现有一个被注释掉的 drawRect 方法，如图：<br><img src="/img/iOSDraw.png" width="100%"><br>如果我们不将这个注释方法打开，那么系统将会按照自己的逻辑绘制视图；倘若开发者需要自己定制视图，那么需要在 drawRect 方法里提供绘制代码。</p>
+<pre><code>什么时候会触发 `drawRect` 方法？
+1. 该视图对象初始化的时候
+2. 显式调用视图的setNeedsDisplay或者setNeedsDisplayInRect:方法。
+</code></pre><h5 id="开始绘制"><a href="#开始绘制" class="headerlink" title="开始绘制"></a><strong>开始绘制</strong></h5><ul>
+<li><p>基本绘制</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">CGContextRef context = UIGraphicsGetCurrentContext();<span class="comment">//获得图形上下文</span></div><div class="line">   </div><div class="line">   <span class="comment">//两个函数是构建描绘路径</span></div><div class="line">   CGContextMoveToPoint (context, <span class="number">75</span>, <span class="number">10</span>); </div><div class="line">   CGContextAddLineToPoint (context, <span class="number">10</span>, <span class="number">150</span>); </div><div class="line">   CGContextAddLineToPoint (context, <span class="number">160</span>, <span class="number">150</span>); </div><div class="line">   </div><div class="line">   <span class="comment">//函数是闭合描绘路径</span></div><div class="line">   CGContextClosePath(context);</div><div class="line">   <span class="comment">// And stroke the path</span></div><div class="line">   [[UIColor blackColor] setStroke]; <span class="comment">//设置描边的颜色</span></div><div class="line">   <span class="comment">//CGContextStrokePath(context);//闭合路径描边</span></div><div class="line">   [[UIColor redColor] setFill]; <span class="comment">//设置要填充颜色</span></div><div class="line">   CGContextDrawPath(context, kCGPathFillStroke);<span class="comment">//设置描绘路径方式</span></div><div class="line">   <span class="comment">//kCGPathFillStroke,kCGPathFill,kCGPathStroke</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>贝塞尔曲线</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">CGContextRef cgContext = UIGraphicsGetC	urrentContext();</div><div class="line">   </div><div class="line">   <span class="comment">//CGContextBeginPath(cgContext);</span></div><div class="line">   CGContextMoveToPoint(cgContext, <span class="number">333</span>, <span class="number">0</span>);</div><div class="line">   CGContextAddCurveToPoint(cgContext, <span class="number">333</span>, <span class="number">0</span>, <span class="number">332</span>, <span class="number">26</span>, <span class="number">330</span>, <span class="number">26</span>);</div><div class="line">   CGContextAddCurveToPoint(cgContext, <span class="number">330</span>, <span class="number">26</span>, <span class="number">299</span>, <span class="number">20</span>, <span class="number">299</span>, <span class="number">17</span>);</div><div class="line">   CGContextAddLineToPoint(cgContext, <span class="number">296</span>, <span class="number">17</span>);</div><div class="line">   CGContextAddCurveToPoint(cgContext, <span class="number">296</span>, <span class="number">17</span>, <span class="number">296</span>, <span class="number">19</span>, <span class="number">291</span>, <span class="number">19</span>);</div><div class="line">   CGContextAddLineToPoint(cgContext, <span class="number">250</span>, <span class="number">19</span>);</div><div class="line">   CGContextAddCurveToPoint(cgContext, <span class="number">250</span>, <span class="number">19</span>, <span class="number">241</span>, <span class="number">24</span>, <span class="number">238</span>, <span class="number">19</span>);</div><div class="line">   CGContextAddCurveToPoint(cgContext, <span class="number">236</span>, <span class="number">20</span>, <span class="number">234</span>, <span class="number">24</span>, <span class="number">227</span>, <span class="number">24</span>);</div><div class="line">   CGContextAddCurveToPoint(cgContext, <span class="number">220</span>, <span class="number">24</span>, <span class="number">217</span>, <span class="number">19</span>, <span class="number">216</span>, <span class="number">19</span>);</div><div class="line">   CGContextAddCurveToPoint(cgContext, <span class="number">214</span>, <span class="number">20</span>, <span class="number">211</span>, <span class="number">22</span>, <span class="number">207</span>, <span class="number">20</span>);</div><div class="line">   CGContextAddCurveToPoint(cgContext, <span class="number">207</span>, <span class="number">20</span>, <span class="number">187</span>, <span class="number">20</span>, <span class="number">182</span>, <span class="number">21</span>);</div><div class="line">   CGContextAddLineToPoint(cgContext, <span class="number">100</span>, <span class="number">45</span>);</div><div class="line">   CGContextAddLineToPoint(cgContext, <span class="number">97</span>, <span class="number">46</span>);</div><div class="line">   CGContextAddCurveToPoint(cgContext, <span class="number">97</span>, <span class="number">46</span>, <span class="number">86</span>, <span class="number">71</span>, <span class="number">64</span>, <span class="number">72</span>);</div><div class="line">   CGContextAddCurveToPoint(cgContext, <span class="number">42</span>, <span class="number">74</span>, <span class="number">26</span>, <span class="number">56</span>, <span class="number">23</span>, <span class="number">48</span>);</div><div class="line">   CGContextAddLineToPoint(cgContext, <span class="number">9</span>, <span class="number">47</span>);</div><div class="line">   CGContextAddCurveToPoint(cgContext, <span class="number">9</span>, <span class="number">47</span>, <span class="number">0</span>, <span class="number">31</span>, <span class="number">0</span>, <span class="number">0</span>);</div><div class="line">   </div><div class="line">   CGContextStrokePath(cgContext);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>绘制文本</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">NSString* imagePath = [[NSBundle mainBundle] pathForResource:@<span class="string">"dog"</span> ofType:@<span class="string">"png"</span>];</div><div class="line">  UIImage* myImageObj = [[UIImage alloc] initWithContentsOfFile:imagePath];</div><div class="line">  <span class="comment">//[myImageObj drawAtPoint:CGPointMake(0, 0)];</span></div><div class="line">  [myImageObj drawInRect:CGRectMake(<span class="number">0</span>, <span class="number">0</span>, <span class="number">320</span>, <span class="number">480</span>)];</div><div class="line">  </div><div class="line">  NSString *s = @<span class="string">"我的小狗"</span>;</div><div class="line">  </div><div class="line">  [s drawAtPoint:CGPointMake(<span class="number">100</span>, <span class="number">0</span>) withFont:[UIFont systemFontOfSize:<span class="number">34.0</span>]];</div></pre></td></tr></table></figure>
+</li>
+<li><p>绘制图像</p>
+<p> 需要注意的是，在QuartZ 2D中遵循的是笛卡尔坐标系，因此绘制图形时需要转换坐标系</p>
+<p> <code>CGContextSaveGState</code>是将当前图形状态要入到图形堆栈。<br> <code>CGContextDrawImage(context, touchRect, image)</code>在上下文中绘制图形。<br><code>CGContextRestoreGState</code>回复当前图形状态。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">NSString *path = [[NSBundle mainBundle] pathForResource:@<span class="string">"cat"</span> ofType:@<span class="string">"jpg"</span>];</div><div class="line">UIImage *img = [UIImage imageWithContentsOfFile:path];</div><div class="line">CGImageRef image = img.CGImage;</div><div class="line">CGContextRef context = UIGraphicsGetCurrentContext();</div><div class="line">CGContextSaveGState(context);</div><div class="line"></div><div class="line">CGRect touchRect = CGRectMake(<span class="number">0</span>, <span class="number">0</span>, img.size.width, img.size.height);</div><div class="line">CGContextDrawImage(context, touchRect, image);  </div><div class="line">CGContextRestoreGState(context);</div></pre></td></tr></table></figure>
+</li>
+<li><p>变换</p>
+<p>  变换（transformation）修改了图形上下文中绘制图形的方式。可以通过移动、旋转或缩放实现变换。</p>
+<p>Quartz提供了多种形式的变换，其中主要：CTM（当前变换矩阵）变换和仿射（affine）变换。</p>
+<ul>
+<li><p>CTM（current transformation matrix）变换，这种变换比较简单，函数有：</p>
+<ul>
+<li><code>CGContextRotateCTM</code>，旋转坐标</li>
+<li><code>CGContextScaleCTM</code>，缩放坐标</li>
+<li><code>CGContextTranslateCTM</code>，移动原点</li>
+</ul>
+</li>
+<li><p>仿射变换 </p>
+<ul>
+<li><p><code>CGAffineMakeRotation</code>，创建旋转矩阵仿射对象</p>
+</li>
+<li><p><code>CGAffineMakeScale</code>，创建缩放矩阵仿射对象</p>
+</li>
+<li><p><code>CGAffineMakeTranslation</code>，创建移动矩阵仿射对象</p>
+</li>
+<li><p><code>CGAffineTransformRotate</code>，旋转矩阵仿射对象</p>
+</li>
+<li><p><code>CGAffineTransformScale</code>，缩放矩阵仿射对象</p>
+</li>
+<li><p><code>CGAffineTransformTranslate</code>，移动矩阵仿射对象</p>
+</li>
+<li><p><code>CGContextConcatCTM</code>，连接到CTM变换</p>
+<p>移动变换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CGContextTranslateCTM (myContext, 100, 50)</div></pre></td></tr></table></figure>
+<p>旋转变换    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">static inline double radians (double degrees) &#123;</div><div class="line">	return degrees * M_PI/180;</div><div class="line">&#125;</div><div class="line">CGContextRotateCTM (myContext, radians(–45));</div><div class="line">//从对象角度：</div><div class="line">//在Quartz坐标下正数为逆时针旋转，负数为顺时针旋转。</div><div class="line">//在UIKit坐标下正数为顺时针旋转，负数为逆时针旋转。</div></pre></td></tr></table></figure>
+<p>缩放变换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">CGContextScaleCTM (myContext, .5, .75);</div><div class="line">//从对象角度：所有x坐标缩小0.5，所有y坐标缩小0.75。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>CTM变换示例代码：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">NSString *path = [[NSBundle mainBundle] pathForResource:@<span class="string">"cat"</span> ofType:@<span class="string">"jpg"</span>];</div><div class="line">   UIImage *img = [UIImage imageWithContentsOfFile:path];</div><div class="line">   CGImageRef image = img.CGImage;</div><div class="line">   CGContextRef context = UIGraphicsGetCurrentContext();</div><div class="line">   CGContextSaveGState(context);</div><div class="line">   CGContextRotateCTM(context, M_PI);</div><div class="line">   CGContextTranslateCTM(context, -img.size.width, -img.size.height);</div><div class="line">   CGRect touchRect = CGRectMake(<span class="number">0</span>, <span class="number">0</span>, img.size.width, img.size.height);</div><div class="line">   CGContextDrawImage(context, touchRect, image);  </div><div class="line">   CGContextRestoreGState(context);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>仿射变换示例代码<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">NSString *path = [[NSBundle mainBundle] pathForResource:@<span class="string">"cat"</span> ofType:@<span class="string">"jpg"</span>];</div><div class="line">UIImage *img = [UIImage imageWithContentsOfFile:path];</div><div class="line">CGImageRef image = img.CGImage;</div><div class="line">CGContextRef context = UIGraphicsGetCurrentContext();</div><div class="line">CGContextSaveGState(context);</div><div class="line">CGAffineTransform myAffine = CGAffineTransformMakeRotation(M_PI); </div><div class="line">myAffine = CGAffineTransformTranslate(myAffine, -img.size.width, -img.size.height); </div><div class="line">CGContextConcatCTM(context, myAffine);</div><div class="line">CGContextRotateCTM(context, M_PI);</div><div class="line">CGContextTranslateCTM(context, -img.size.width, -img.size.height);</div><div class="line">CGRect touchRect = CGRectMake(<span class="number">0</span>, <span class="number">0</span>, img.size.width, img.size.height);</div><div class="line">CGContextDrawImage(context, touchRect, image);  </div><div class="line">CGContextRestoreGState(context);</div></pre></td></tr></table></figure></li>
+</ul>
 
-什么时候会触发 drawRect 方法？
-1.该视图对象初始化的时候
-2.显式调用视图的setNeedsDisplay或者setNeedsDisplayInRect:方法。
-</code></pre><p>代码演示：</p>
-<pre><code>
-    CGContextRef context = UIGraphicsGetCurrentContext();//获得图形上下文
-
-    //两个函数是构建描绘路径
-    CGContextMoveToPoint (context, 75, 10); 
-    CGContextAddLineToPoint (context, 10, 150); 
-    CGContextAddLineToPoint (context, 160, 150); 
-
-    //函数是闭合描绘路径
-    CGContextClosePath(context);
-    // And stroke the path
-    [[UIColor blackColor] setStroke]; //设置描边的颜色
-    //CGContextStrokePath(context);//闭合路径描边
-    [[UIColor redColor] setFill]; //设置要填充颜色
-    CGContextDrawPath(context, kCGPathFillStroke);//设置描绘路径方式
-    //kCGPathFillStroke,kCGPathFill,kCGPathStroke
-</code></pre>
-
-
-<p>2 . 贝塞尔曲线</p>
-<pre><code>  CGContextRef cgContext = UIGraphicsGetCurrentContext();
-
-//CGContextBeginPath(cgContext);
-CGContextMoveToPoint(cgContext, 333, 0);
-CGContextAddCurveToPoint(cgContext, 333, 0, 332, 26, 330, 26);
-CGContextAddCurveToPoint(cgContext, 330, 26, 299, 20, 299, 17);
-CGContextAddLineToPoint(cgContext, 296, 17);
-CGContextAddCurveToPoint(cgContext, 296, 17, 296, 19, 291, 19);
-CGContextAddLineToPoint(cgContext, 250, 19);
-CGContextAddCurveToPoint(cgContext, 250, 19, 241, 24, 238, 19);
-CGContextAddCurveToPoint(cgContext, 236, 20, 234, 24, 227, 24);
-CGContextAddCurveToPoint(cgContext, 220, 24, 217, 19, 216, 19);
-CGContextAddCurveToPoint(cgContext, 214, 20, 211, 22, 207, 20);
-CGContextAddCurveToPoint(cgContext, 207, 20, 187, 20, 182, 21);
-CGContextAddLineToPoint(cgContext, 100, 45);
-CGContextAddLineToPoint(cgContext, 97, 46);
-CGContextAddCurveToPoint(cgContext, 97, 46, 86, 71, 64, 72);
-CGContextAddCurveToPoint(cgContext, 42, 74, 26, 56, 23, 48);
-CGContextAddLineToPoint(cgContext, 9, 47);
-CGContextAddCurveToPoint(cgContext, 9, 47, 0, 31, 0, 0);
-
-CGContextStrokePath(cgContext);
-}
-</code></pre><p>3 .绘制图像和文本</p>
-<pre><code> NSString* imagePath = [[NSBundle mainBundle] pathForResource:@&quot;dog&quot; ofType:@&quot;png&quot;];
-UIImage* myImageObj = [[UIImage alloc] initWithContentsOfFile:imagePath];
-//[myImageObj drawAtPoint:CGPointMake(0, 0)];
-[myImageObj drawInRect:CGRectMake(0, 0, 320, 480)];
-
-NSString *s = @&quot;我的小狗&quot;;
-
-[s drawAtPoint:CGPointMake(100, 0) withFont:[UIFont systemFontOfSize:34.0]];
-
-/*
-需要注意的是，在QuartZ 2D中遵循的是笛卡尔坐标系，因此绘制图形时需要转换坐标系
-CGContextSaveGState是将当前图形状态要入到图形堆栈。
-
-CGContextDrawImage(context, touchRect, image)在上下文中绘制图形。 
-CGContextRestoreGState回复当前图形状态。    
-*/     
-NSString *path = [[NSBundle mainBundle] pathForResource:@&quot;cat&quot; ofType:@&quot;jpg&quot;];
-UIImage *img = [UIImage imageWithContentsOfFile:path];
-CGImageRef image = img.CGImage;
-CGContextRef context = UIGraphicsGetCurrentContext();
-CGContextSaveGState(context);
-
-CGRect touchRect = CGRectMake(0, 0, img.size.width, img.size.height);
-CGContextDrawImage(context, touchRect, image);  
-CGContextRestoreGState(context);
-</code></pre><p>  4.变换</p>
-<pre><code>  变换（transformation）修改了图形上下文中绘制图形的方式。可以通过移动、旋转或缩放实现变换。
-
-Quartz提供了多种形式的变换，其中主要：CTM（当前变换矩阵）变换和仿射（affine）变换。
-
-CTM（current transformation matrix）变换，这种变换比较简单，函数有：
-
-CGContextRotateCTM，旋转坐标
-
-CGContextScaleCTM，缩放坐标
-
-CGContextTranslateCTM，移动原点
-
-移动变换
-CGContextTranslateCTM (myContext, 100, 50)
-旋转变换    
-static inline double radians (double degrees) {return degrees * M_PI/180;}
-CGContextRotateCTM (myContext, radians(–45.));
-
-从对象角度：
-在Quartz坐标下正数为逆时针旋转，负数为顺时针旋转。
-在UIKit坐标下正数为顺时针旋转，负数为逆时针旋转。
-
-缩放变换
-
-CGContextScaleCTM (myContext, .5, .75);
-
-从对象角度：所有x坐标缩小0.5，所有y坐标缩小0.75。
-
-NSString *path = [[NSBundle mainBundle] pathForResource:@&quot;cat&quot; ofType:@&quot;jpg&quot;];
-UIImage *img = [UIImage imageWithContentsOfFile:path];
-CGImageRef image = img.CGImage;
-CGContextRef context = UIGraphicsGetCurrentContext();
-CGContextSaveGState(context);
-
-CGContextRotateCTM(context, M_PI);
-CGContextTranslateCTM(context, -img.size.width, -img.size.height);
-
-CGRect touchRect = CGRectMake(0, 0, img.size.width, img.size.height);
-CGContextDrawImage(context, touchRect, image);  
-CGContextRestoreGState(context);
-</code></pre><p>5 . 仿射变换</p>
-<pre><code>CGAffineMakeRotation，创建旋转矩阵仿射对象
-
-CGAffineMakeScale，创建缩放矩阵仿射对象
-
-CGAffineMakeTranslation，创建移动矩阵仿射对象
-
-CGAffineTransformRotate，旋转矩阵仿射对象
-
-CGAffineTransformScale，缩放矩阵仿射对象
-
-CGAffineTransformTranslate，移动矩阵仿射对象
-
-CGContextConcatCTM，连接到CTM变换
-
-案例：
-
-NSString *path = [[NSBundle mainBundle] pathForResource:@&quot;cat&quot; ofType:@&quot;jpg&quot;];
-UIImage *img = [UIImage imageWithContentsOfFile:path];
-CGImageRef image = img.CGImage;
-CGContextRef context = UIGraphicsGetCurrentContext();
-CGContextSaveGState(context);
-
-CGAffineTransform myAffine = CGAffineTransformMakeRotation(M_PI); 
-myAffine = CGAffineTransformTranslate(myAffine, -img.size.width, -img.size.height); 
-CGContextConcatCTM(context, myAffine);
-
-CGContextRotateCTM(context, M_PI);
-CGContextTranslateCTM(context, -img.size.width, -img.size.height);
-
-CGRect touchRect = CGRectMake(0, 0, img.size.width, img.size.height);
-CGContextDrawImage(context, touchRect, image);  
-CGContextRestoreGState(context);
-</code></pre>
 
                 
             </div>
