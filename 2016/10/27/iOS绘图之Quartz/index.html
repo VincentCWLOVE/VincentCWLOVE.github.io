@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="a blog for iOS and html5">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Vincent CHEN">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="iOS绘图之Quartz"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="a blog for iOS and html5" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Vincent"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>iOS绘图之Quartz - Vincent</title>
+
+    <link rel='icon'  href='/img/favicon.ico '  type=‘image/x-ico’  />
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Vincent</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/VincentCWLOVE">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>iOS绘图之Quartz</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-10-27
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/iOS/">#iOS</a> <a href="/tags/绘图/">#绘图</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>#iOS绘图<br>&gt;<br>iOS支持两套图形API框架：Core Graphics/QuartZ 2D 和OpenGL ES。本系列文章将向大家介绍这两套API框架</p>
+<p>###Core Graphics Framework/QuartZ 2D<br>Core Graphics Framework是一套基于C的API框架，使用了Quartz作为绘图引擎。它提供了低级别、轻量级、高保真度的2D渲染。该框架可以用于基于路径的绘图、变换、颜色管理、脱屏渲染，模板、渐变、遮蔽、图像数据管理、图像的创建、遮罩以及PDF文档的创建、显示和分析。</p>
+<p>QuartZ 2D是苹果公司开发的一套API，它是Core Graphics Framework的一部分</p>
+<p><a href="https://developer.apple.com/library/ios/samplecode/QuartzDemo/Listings/ReadMe_txt.html" title="Title" target="_blank" rel="external">点我进入苹果官方文档</a> </p>
+<p>###OpenGL ES<br>OpenGL ES是跨平台的图形API，属于OpenGL的一个简化版本。OpenGL ES是应用程序编程接口，该接口描述了方法、结构、函数应具有的行为以及应该如何被使用的语义。</p>
+<p>因为OpenGL ES只是定义了应用程序编程接口，具体如何去实现，需要开发者具有扎实计算机图形变换的扎实基础。</p>
+<p>###使用QuartZ 2D</p>
+<ol>
+<li><p><strong>使用原理</strong></p>
+<pre><code>在iOS上，所有的绘制图形都发生在UIView对象的所表示的矩形区域内。如果您使用系统提供的视图，绘制工作会自动得到处理。然而，如果您定义自己的定制视图，则必须自行提供绘制代码。例如，咱们定一个类是继承于UIView，那么我们会发现有一个被注释掉的 drawRect 方法，如图：
+</code></pre></li>
+</ol>
+<p><img src="/img/iOSDraw.png" width="100%"></p>
+<pre><code>如果我们不将这个注释方法打开，那么系统将会按照自己的逻辑绘制视图；倘若开发者需要自己定制视图，那么需要在 drawRect 方法里提供绘制代码。
+
+什么时候会触发 drawRect 方法？
+1.该视图对象初始化的时候
+2.显式调用视图的setNeedsDisplay或者setNeedsDisplayInRect:方法。
+</code></pre><p>代码演示：</p>
+<pre><code>
+    CGContextRef context = UIGraphicsGetCurrentContext();//获得图形上下文
+
+    //两个函数是构建描绘路径
+    CGContextMoveToPoint (context, 75, 10); 
+    CGContextAddLineToPoint (context, 10, 150); 
+    CGContextAddLineToPoint (context, 160, 150); 
+
+    //函数是闭合描绘路径
+    CGContextClosePath(context);
+    // And stroke the path
+    [[UIColor blackColor] setStroke]; //设置描边的颜色
+    //CGContextStrokePath(context);//闭合路径描边
+    [[UIColor redColor] setFill]; //设置要填充颜色
+    CGContextDrawPath(context, kCGPathFillStroke);//设置描绘路径方式
+    //kCGPathFillStroke,kCGPathFill,kCGPathStroke
+</code></pre>
+
+
+<p>2 . 贝塞尔曲线</p>
+<pre><code>  CGContextRef cgContext = UIGraphicsGetCurrentContext();
+
+//CGContextBeginPath(cgContext);
+CGContextMoveToPoint(cgContext, 333, 0);
+CGContextAddCurveToPoint(cgContext, 333, 0, 332, 26, 330, 26);
+CGContextAddCurveToPoint(cgContext, 330, 26, 299, 20, 299, 17);
+CGContextAddLineToPoint(cgContext, 296, 17);
+CGContextAddCurveToPoint(cgContext, 296, 17, 296, 19, 291, 19);
+CGContextAddLineToPoint(cgContext, 250, 19);
+CGContextAddCurveToPoint(cgContext, 250, 19, 241, 24, 238, 19);
+CGContextAddCurveToPoint(cgContext, 236, 20, 234, 24, 227, 24);
+CGContextAddCurveToPoint(cgContext, 220, 24, 217, 19, 216, 19);
+CGContextAddCurveToPoint(cgContext, 214, 20, 211, 22, 207, 20);
+CGContextAddCurveToPoint(cgContext, 207, 20, 187, 20, 182, 21);
+CGContextAddLineToPoint(cgContext, 100, 45);
+CGContextAddLineToPoint(cgContext, 97, 46);
+CGContextAddCurveToPoint(cgContext, 97, 46, 86, 71, 64, 72);
+CGContextAddCurveToPoint(cgContext, 42, 74, 26, 56, 23, 48);
+CGContextAddLineToPoint(cgContext, 9, 47);
+CGContextAddCurveToPoint(cgContext, 9, 47, 0, 31, 0, 0);
+
+CGContextStrokePath(cgContext);
+}
+</code></pre><p>3 .绘制图像和文本</p>
+<pre><code> NSString* imagePath = [[NSBundle mainBundle] pathForResource:@&quot;dog&quot; ofType:@&quot;png&quot;];
+UIImage* myImageObj = [[UIImage alloc] initWithContentsOfFile:imagePath];
+//[myImageObj drawAtPoint:CGPointMake(0, 0)];
+[myImageObj drawInRect:CGRectMake(0, 0, 320, 480)];
+
+NSString *s = @&quot;我的小狗&quot;;
+
+[s drawAtPoint:CGPointMake(100, 0) withFont:[UIFont systemFontOfSize:34.0]];
+
+/*
+需要注意的是，在QuartZ 2D中遵循的是笛卡尔坐标系，因此绘制图形时需要转换坐标系
+CGContextSaveGState是将当前图形状态要入到图形堆栈。
+
+CGContextDrawImage(context, touchRect, image)在上下文中绘制图形。 
+CGContextRestoreGState回复当前图形状态。    
+*/     
+NSString *path = [[NSBundle mainBundle] pathForResource:@&quot;cat&quot; ofType:@&quot;jpg&quot;];
+UIImage *img = [UIImage imageWithContentsOfFile:path];
+CGImageRef image = img.CGImage;
+CGContextRef context = UIGraphicsGetCurrentContext();
+CGContextSaveGState(context);
+
+CGRect touchRect = CGRectMake(0, 0, img.size.width, img.size.height);
+CGContextDrawImage(context, touchRect, image);  
+CGContextRestoreGState(context);
+</code></pre><p>  4.变换</p>
+<pre><code>  变换（transformation）修改了图形上下文中绘制图形的方式。可以通过移动、旋转或缩放实现变换。
+
+Quartz提供了多种形式的变换，其中主要：CTM（当前变换矩阵）变换和仿射（affine）变换。
+
+CTM（current transformation matrix）变换，这种变换比较简单，函数有：
+
+CGContextRotateCTM，旋转坐标
+
+CGContextScaleCTM，缩放坐标
+
+CGContextTranslateCTM，移动原点
+
+移动变换
+CGContextTranslateCTM (myContext, 100, 50)
+旋转变换    
+static inline double radians (double degrees) {return degrees * M_PI/180;}
+CGContextRotateCTM (myContext, radians(–45.));
+
+从对象角度：
+在Quartz坐标下正数为逆时针旋转，负数为顺时针旋转。
+在UIKit坐标下正数为顺时针旋转，负数为逆时针旋转。
+
+缩放变换
+
+CGContextScaleCTM (myContext, .5, .75);
+
+从对象角度：所有x坐标缩小0.5，所有y坐标缩小0.75。
+
+NSString *path = [[NSBundle mainBundle] pathForResource:@&quot;cat&quot; ofType:@&quot;jpg&quot;];
+UIImage *img = [UIImage imageWithContentsOfFile:path];
+CGImageRef image = img.CGImage;
+CGContextRef context = UIGraphicsGetCurrentContext();
+CGContextSaveGState(context);
+
+CGContextRotateCTM(context, M_PI);
+CGContextTranslateCTM(context, -img.size.width, -img.size.height);
+
+CGRect touchRect = CGRectMake(0, 0, img.size.width, img.size.height);
+CGContextDrawImage(context, touchRect, image);  
+CGContextRestoreGState(context);
+</code></pre><p>5 . 仿射变换</p>
+<pre><code>CGAffineMakeRotation，创建旋转矩阵仿射对象
+
+CGAffineMakeScale，创建缩放矩阵仿射对象
+
+CGAffineMakeTranslation，创建移动矩阵仿射对象
+
+CGAffineTransformRotate，旋转矩阵仿射对象
+
+CGAffineTransformScale，缩放矩阵仿射对象
+
+CGAffineTransformTranslate，移动矩阵仿射对象
+
+CGContextConcatCTM，连接到CTM变换
+
+案例：
+
+NSString *path = [[NSBundle mainBundle] pathForResource:@&quot;cat&quot; ofType:@&quot;jpg&quot;];
+UIImage *img = [UIImage imageWithContentsOfFile:path];
+CGImageRef image = img.CGImage;
+CGContextRef context = UIGraphicsGetCurrentContext();
+CGContextSaveGState(context);
+
+CGAffineTransform myAffine = CGAffineTransformMakeRotation(M_PI); 
+myAffine = CGAffineTransformTranslate(myAffine, -img.size.width, -img.size.height); 
+CGContextConcatCTM(context, myAffine);
+
+CGContextRotateCTM(context, M_PI);
+CGContextTranslateCTM(context, -img.size.width, -img.size.height);
+
+CGRect touchRect = CGRectMake(0, 0, img.size.width, img.size.height);
+CGContextDrawImage(context, touchRect, image);  
+CGContextRestoreGState(context);
+</code></pre>
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+               
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//cdn.bootcss.com/jquery/3.1.1/core.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'http://vincentlovecoding.duoshuo.com';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>
