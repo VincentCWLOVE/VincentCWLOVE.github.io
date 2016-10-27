@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="a blog for iOS and html5">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Vincent CHEN">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="使用AVFoundation框架自定义摄像头界面"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="a blog for iOS and html5" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Vincent"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>使用AVFoundation框架自定义摄像头界面 - Vincent</title>
+
+    <link rel='icon'  href='/img/favicon.ico '  type=‘image/x-ico’  />
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Vincent</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/VincentCWLOVE">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>使用AVFoundation框架自定义摄像头界面</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-10-28
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/iOS/">#iOS</a> <a href="/tags/AVFoundation/">#AVFoundation</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="涉及到的类"><a href="#涉及到的类" class="headerlink" title="涉及到的类"></a>涉及到的类</h3><p><li><code>AVCaptureSession</code>会话层</li></p>
+<p><li><code>AVCaptureDevice</code> 创建 配置输入设备</li></p>
+<p><li><code>AVCaptureDeviceInput</code> 输入</li></p>
+<p><li><code>AVCaptureStillImageOutput</code> 输出</li></p>
+<p><li><code>AVCaptureVideoPreviewLayer</code> layer层</li></p>
+<p><li><code>UIImageOrientation</code> 图片朝向</li></p>
+<h3 id="需要遵循的协议"><a href="#需要遵循的协议" class="headerlink" title="需要遵循的协议"></a>需要遵循的协议</h3><p><code>AVCaptureVideoDataOutputSampleBufferDelegate</code></p>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><pre>
+//1.创建会话层
+    self.session = [[[AVCaptureSession alloc] init] autorelease];
+    [self.session setSessionPreset:AVCaptureSessionPresetPhoto];
+
+
+    //2.创建、配置输入设备
+    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+#if 1
+    int flags = NSKeyValueObservingOptionNew; //监听自动对焦
+    [device addObserver:self forKeyPath:@"adjustingFocus" options:flags context:nil];
+#endif
+
+    NSError *error;
+    AVCaptureDeviceInput *captureInput = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error];
+    if (!captureInput)
+    {
+        NSLog(@"Error: %@", error);
+        return;
+    }
+    [self.session addInput:captureInput];
+
+
+    //3.创建、配置输出       
+    captureOutput = [[[AVCaptureStillImageOutput alloc] init] autorelease];
+    NSDictionary *outputSettings = [[NSDictionary alloc] initWithObjectsAndKeys:AVVideoCodecJPEG,AVVideoCodecKey,nil];
+    [captureOutput setOutputSettings:outputSettings];
+
+    [outputSettings release];
+    [self.session addOutput:captureOutput];
+</pre>
+
+<h3 id="KVO回调"><a href="#KVO回调" class="headerlink" title="KVO回调"></a>KVO回调</h3><pre>
+//对焦回调
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if( [keyPath isEqualToString:@"adjustingFocus"] ){
+        BOOL adjustingFocus = [ [change objectForKey:NSKeyValueChangeNewKey] isEqualToNumber:[NSNumber numberWithInt:1] ];
+        NSLog(@"Is adjusting focus? %@", adjustingFocus ? @"YES" : @"NO" );
+        NSLog(@"Change dictionary: %@", change);
+        if (delegate) {
+            [delegate foucusStatus:adjustingFocus];
+        }
+    }
+}
+</pre>
+
+<h3 id="嵌入摄像头捕捉的界面"><a href="#嵌入摄像头捕捉的界面" class="headerlink" title="嵌入摄像头捕捉的界面"></a>嵌入摄像头捕捉的界面</h3><pre>
+-(void) embedPreviewInView: (UIView *) aView {
+    if (!session) return;
+    //设置取景
+    preview = [AVCaptureVideoPreviewLayer layerWithSession: session];
+    preview.frame = aView.bounds;
+    preview.videoGravity = AVLayerVideoGravityResizeAspectFill; 
+    [aView.layer addSublayer: preview];
+}
+</pre>
+
+<h3 id="横竖屏适配"><a href="#横竖屏适配" class="headerlink" title="横竖屏适配"></a>横竖屏适配</h3><pre>
+- (void)changePreviewOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    if (!preview) {
+        return;
+    }
+     [CATransaction begin];
+    if (interfaceOrientation == UIInterfaceOrientationLandscapeRight) {
+        g_orientation = UIImageOrientationUp;
+        preview.connection.videoOrientation = AVCaptureVideoOrientationLandscapeRight;
+
+    }else if (interfaceOrientation == UIInterfaceOrientationLandscapeLeft){
+        g_orientation = UIImageOrientationDown;
+        preview.connection.videoOrientation = AVCaptureVideoOrientationLandscapeLeft;
+
+    }else if (interfaceOrientation == UIDeviceOrientationPortrait){
+        g_orientation = UIImageOrientationRight;
+        preview.connection.videoOrientation = AVCaptureVideoOrientationPortrait;
+
+    }else if (interfaceOrientation == UIDeviceOrientationPortraitUpsideDown){
+        g_orientation = UIImageOrientationLeft;
+        preview.connection.videoOrientation = AVCaptureVideoOrientationPortraitUpsideDown;
+    }
+    [CATransaction commit];
+}
+</pre>
+### 开始工作/停止工作/拍照
+<pre>
+
+- (void) startRunning
+{
+    [[self session] startRunning];    
+}
+
+- (void) stopRunning
+{
+    [[self session] stopRunning];
+}
+
+-(void)CaptureStillImage
+{
+    [self  Captureimage];
+}
+</pre>
+
+<h3 id="拍照"><a href="#拍照" class="headerlink" title="拍照"></a>拍照</h3><pre>
+-(void)Captureimage
+{
+    //get connection
+    AVCaptureConnection *videoConnection = nil;
+    for (AVCaptureConnection *connection in captureOutput.connections) {
+        for (AVCaptureInputPort *port in [connection inputPorts]) {
+            if ([[port mediaType] isEqual:AVMediaTypeVideo] ) {
+                videoConnection = connection;
+                break;
+            }
+        }
+        if (videoConnection) { break; }
+    }
+
+    //get UIImage
+    [captureOutput captureStillImageAsynchronouslyFromConnection:videoConnection completionHandler:
+     ^(CMSampleBufferRef imageSampleBuffer, NSError *error) {
+         CFDictionaryRef exifAttachments =
+         CMGetAttachment(imageSampleBuffer, kCGImagePropertyExifDictionary, NULL);
+         if (exifAttachments) {
+             // Do something with the attachments.
+         }
+
+         // Continue as appropriate.
+         NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageSampleBuffer];
+         UIImage *t_image = [UIImage imageWithData:imageData];   
+         image = [[UIImage alloc]initWithCGImage:t_image.CGImage scale:1.0 orientation:g_orientation];
+
+         [self giveImg2Delegate];
+     }];
+}
+</pre>
+<pre>
+#pragma mark 切换前后摄像头
+- (IBAction)toggleButtonClick:(UIButton *)sender {
+    AVCaptureDevice *currentDevice=[self.captureDeviceInput device];
+    AVCaptureDevicePosition currentPosition=[currentDevice position];
+    [self removeNotificationFromCaptureDevice:currentDevice];
+    AVCaptureDevice *toChangeDevice;
+    AVCaptureDevicePosition toChangePosition=AVCaptureDevicePositionFront;
+    if (currentPosition==AVCaptureDevicePositionUnspecified||currentPosition==AVCaptureDevicePositionFront) {
+        toChangePosition=AVCaptureDevicePositionBack;
+    }
+    toChangeDevice=[self getCameraDeviceWithPosition:toChangePosition];
+    [self addNotificationToCaptureDevice:toChangeDevice];
+    //获得要调整的设备输入对象
+    AVCaptureDeviceInput *toChangeDeviceInput=[[AVCaptureDeviceInput alloc]initWithDevice:toChangeDevice error:nil];
+
+    //改变会话的配置前一定要先开启配置，配置完成后提交配置改变
+    [self.captureSession beginConfiguration];
+    //移除原有输入对象
+    [self.captureSession removeInput:self.captureDeviceInput];
+    //添加新的输入对象
+    if ([self.captureSession canAddInput:toChangeDeviceInput]) {
+        [self.captureSession addInput:toChangeDeviceInput];
+        self.captureDeviceInput=toChangeDeviceInput;
+    }
+    //提交会话配置
+    [self.captureSession commitConfiguration];
+
+    [self setFlashModeButtonStatus];
+}
+
+#pragma mark 自动闪光灯开启
+- (IBAction)flashAutoClick:(UIButton *)sender {
+    [self setFlashMode:AVCaptureFlashModeAuto];
+    [self setFlashModeButtonStatus];
+}
+#pragma mark 打开闪光灯
+- (IBAction)flashOnClick:(UIButton *)sender {
+    [self setFlashMode:AVCaptureFlashModeOn];
+    [self setFlashModeButtonStatus];
+}
+#pragma mark 关闭闪光灯
+- (IBAction)flashOffClick:(UIButton *)sender {
+    [self setFlashMode:AVCaptureFlashModeOff];
+    [self setFlashModeButtonStatus];
+}
+</pre>
+
+<pre>
+/**
+ *  设置聚焦点
+ *
+ *  @param point 聚焦点
+ */
+-(void)focusWithMode:(AVCaptureFocusMode)focusMode exposureMode:(AVCaptureExposureMode)exposureMode atPoint:(CGPoint)point{
+    [self changeDeviceProperty:^(AVCaptureDevice *captureDevice) {
+        if ([captureDevice isFocusModeSupported:focusMode]) {
+            [captureDevice setFocusMode:AVCaptureFocusModeAutoFocus];
+        }
+        if ([captureDevice isFocusPointOfInterestSupported]) {
+            [captureDevice setFocusPointOfInterest:point];
+        }
+        if ([captureDevice isExposureModeSupported:exposureMode]) {
+            [captureDevice setExposureMode:AVCaptureExposureModeAutoExpose];
+        }
+        if ([captureDevice isExposurePointOfInterestSupported]) {
+            [captureDevice setExposurePointOfInterest:point];
+        }
+    }];
+}
+
+/**
+ *  添加点按手势，点按时聚焦
+ */
+-(void)addGenstureRecognizer{
+    UITapGestureRecognizer *tapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapScreen:)];
+    [self.viewContainer addGestureRecognizer:tapGesture];
+}
+-(void)tapScreen:(UITapGestureRecognizer *)tapGesture{
+    CGPoint point= [tapGesture locationInView:self.viewContainer];
+    //将UI坐标转化为摄像头坐标
+    CGPoint cameraPoint= [self.captureVideoPreviewLayer captureDevicePointOfInterestForPoint:point];
+    [self setFocusCursorWithPoint:point];
+    [self focusWithMode:AVCaptureFocusModeAutoFocus exposureMode:AVCaptureExposureModeAutoExpose atPoint:cameraPoint];
+}
+</pre>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+               
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//cdn.bootcss.com/jquery/3.1.1/core.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'http://vincentlovecoding.duoshuo.com';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>
