@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="a blog for iOS and html5">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Vincent CHEN">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="小程序之scroll-view"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="a blog for iOS and html5" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Vincent"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>小程序之scroll-view - Vincent</title>
+
+    <link rel='icon'  href='/img/favicon.ico '  type=‘image/x-ico’  />
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Vincent</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/VincentCWLOVE">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>小程序之scroll-view</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-11-07
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/微信小程序/">#微信小程序</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <blockquote>
+<p>这篇文章将向大家介绍小程序控件之<code>scroll-view</code></p>
+</blockquote>
+<h3 id="scroll-view-的属性"><a href="#scroll-view-的属性" class="headerlink" title="scroll-view 的属性"></a>scroll-view 的属性</h3><table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>scroll-x</td>
+<td>Boolean</td>
+<td>false</td>
+<td>允许横向滚动</td>
+</tr>
+<tr>
+<td>scroll-y</td>
+<td>Boolean</td>
+<td>false</td>
+<td>允许纵向滚动</td>
+</tr>
+<tr>
+<td>upper-threshold</td>
+<td>Number</td>
+<td>50</td>
+<td>距顶部/左边多远时（单位px），触发 scrolltoupper 事件</td>
+</tr>
+<tr>
+<td>lower-threshold</td>
+<td>Number</td>
+<td>50</td>
+<td>距底部/右边多远时（单位px），触发 scrolltolower 事件</td>
+</tr>
+<tr>
+<td>scroll-top</td>
+<td>Number</td>
+<td></td>
+<td>设置竖向滚动条位置</td>
+</tr>
+<tr>
+<td>scroll-left</td>
+<td>Number</td>
+<td></td>
+<td>设置横向滚动条位置</td>
+</tr>
+<tr>
+<td>scroll-into-view</td>
+<td>String</td>
+<td></td>
+<td>值应为某子元素id，则滚动到该元素，元素顶部对齐滚动区域顶部</td>
+</tr>
+<tr>
+<td>bindscrolltoupper</td>
+<td>EventHandle</td>
+<td></td>
+<td>滚动到顶部/左边，会触发 scrolltoupper 事件</td>
+</tr>
+<tr>
+<td>bindscrolltolower</td>
+<td>EventHandle</td>
+<td></td>
+<td>滚动到底部/右边，会触发 scrolltolower 事件</td>
+</tr>
+<tr>
+<td>bindscroll</td>
+<td>EventHandle</td>
+<td></td>
+<td>滚动时触发，event.detail = {scrollLeft, scrollTop, scrollHeight, scrollWidth, deltaX, deltaY}</td>
+</tr>
+</tbody>
+</table>
+<p>使用竖向滚动时，需要给<scroll-view>一个固定高度，通过 WXSS 设置 height。</scroll-view></p>
+<h3 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h3><ul>
+<li><p>选中<code>pages</code>文件夹下的<code>detail</code>文件夹下的<code>detail.wxml</code>文件,键入如下代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--scroll-view组件--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">block</span> <span class="attr">wx:if</span>=<span class="string">"&#123;&#123;index == 1&#125;&#125;"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!--横向滚动--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"menu"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">scroll-view</span> <span class="attr">scroll-x</span>=<span class="string">"true"</span> <span class="attr">class</span>=<span class="string">"top-nav"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"top_btn top_btn_select"</span>&gt;</span>栏目1<span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"top_btn"</span>&gt;</span>栏目2<span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"top_btn"</span>&gt;</span>栏目3<span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"top_btn"</span>&gt;</span>栏目4<span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"top_btn"</span>&gt;</span>栏目5<span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"top_btn"</span>&gt;</span>栏目6<span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"top_btn"</span>&gt;</span>栏目7<span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"top_btn"</span>&gt;</span>栏目8<span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">scroll-view</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">    </div><div class="line">    <span class="comment">&lt;!--竖向滚动--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">scroll-view</span> <span class="attr">scroll-y</span>=<span class="string">"true"</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"cell"</span>&gt;</span>cell1<span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"cell"</span>&gt;</span>cell2<span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"cell"</span>&gt;</span>cell3<span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"cell"</span>&gt;</span>cell4<span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"cell"</span>&gt;</span>cell5<span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"cell"</span>&gt;</span>cell6<span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"cell"</span>&gt;</span>cell7<span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">"cell"</span>&gt;</span>cell8<span class="tag">&lt;/<span class="name">view</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">scroll-view</span>&gt;</span></div><div class="line">   </div><div class="line"><span class="tag">&lt;/<span class="name">block</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>选中<code>pages</code>文件夹下的<code>detail</code>文件夹下的<code>detail.wxss</code>文件,键入如下代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">scroll-view 组件样式</div><div class="line">*/</div><div class="line"><span class="comment">/*</span></div><div class="line">水平</div><div class="line">*/</div><div class="line"><span class="selector-class">.menu</span>&#123;</div><div class="line">  <span class="attribute">position</span>: fixed;</div><div class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">z-index</span>: <span class="number">10</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">background</span>: <span class="number">#fff</span>;</div><div class="line">  <span class="attribute">border-top</span>:<span class="number">#eee</span> solid <span class="number">1px</span>;</div><div class="line">  <span class="attribute">border-bottom</span>:<span class="number">#eee</span> solid <span class="number">1px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.top-nav</span>&#123;</div><div class="line">    <span class="attribute">white-space</span>: nowrap;</div><div class="line">    <span class="attribute">display</span>: flex;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.top_btn</span> &#123;</div><div class="line">    <span class="attribute">display</span>: inline-block;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">10px</span>;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">1rem</span>;</div><div class="line">    <span class="attribute">color</span>: gray;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.top_btn_select</span> &#123;</div><div class="line">    <span class="attribute">color</span>: red;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">1.5rem</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*</span></div><div class="line">垂直</div><div class="line">*/</div><div class="line"><span class="selector-class">.content</span>&#123;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">    <span class="attribute">margin-top</span>:<span class="number">45px</span>; </div><div class="line">&#125;</div><div class="line"><span class="selector-class">.cell</span> &#123;</div><div class="line">    <span class="attribute">display</span>: inline-block;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">10px</span> <span class="number">20px</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">90%</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">    <span class="attribute">border</span>: <span class="number">#e9e9e9</span> solid <span class="number">1px</span>;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">    <span class="attribute">background-color</span>: red;</div><div class="line">    <span class="attribute">color</span>: white;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="本文代码"><a href="#本文代码" class="headerlink" title="本文代码"></a>本文代码</h3><p><a href="https://github.com/VincentCWLOVE/wechatpra" target="_blank" rel="external">请查看此目录下面的 <code>wx4</code> 文件夹</a></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+               
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//cdn.bootcss.com/jquery/3.1.1/core.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'http://vincentlovecoding.duoshuo.com';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>
